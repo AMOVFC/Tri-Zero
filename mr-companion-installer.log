@@ -1,0 +1,282 @@
+2025-11-22 21:08:59.889184 [Info] - Starting Installer...
+2025-11-22 21:08:59.889215 [Debug] - Parsing install (bash) cmd line args.
+2025-11-22 21:08:59.889325 [Info] - Os Type Detected: PlatformType.DEBIAN
+2025-11-22 21:08:59.889351 [Debug] - Validating args
+2025-11-22 21:08:59.889397 [Info] - Ensuring that time sync is enabled...
+2025-11-22 21:09:01.135181 [Debug] - RunShellCommand - sudo apt -y purge ntp ntpdate ntpsec-ntpdate - return: 0; error - 
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+2025-11-22 21:09:01.135205 [Debug] - TimeSync System Command Success. Cmd: sudo apt -y purge ntp ntpdate ntpsec-ntpdate
+2025-11-22 21:09:02.351241 [Debug] - RunShellCommand - sudo apt install -y systemd-timesyncd - return: 0; error - 
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+2025-11-22 21:09:02.351262 [Debug] - TimeSync System Command Success. Cmd: sudo apt install -y systemd-timesyncd
+2025-11-22 21:09:02.456124 [Debug] - RunShellCommand - sudo timedatectl status - return: 0; error - 
+2025-11-22 21:09:02.456147 [Debug] - TimeSync Status:
+               Local time: Sat 2025-11-22 21:09:02 EST
+           Universal time: Sun 2025-11-23 02:09:02 UTC
+                 RTC time: Sun 2025-11-23 02:09:02
+                Time zone: America/New_York (EST, -0500)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+ 
+2025-11-22 21:09:02.947966 [Debug] - RunShellCommand - sudo systemctl daemon-reload - return: 0; error - 
+2025-11-22 21:09:02.947988 [Debug] - TimeSync System Command Success. Cmd: sudo systemctl daemon-reload
+2025-11-22 21:09:03.470886 [Debug] - RunShellCommand - sudo systemctl enable systemd-timesyncd - return: 0; error - 
+2025-11-22 21:09:03.470909 [Debug] - TimeSync System Command Success. Cmd: sudo systemctl enable systemd-timesyncd
+2025-11-22 21:09:03.574555 [Debug] - RunShellCommand - sudo systemctl restart systemd-timesyncd - return: 0; error - 
+2025-11-22 21:09:03.574578 [Debug] - TimeSync System Command Success. Cmd: sudo systemctl restart systemd-timesyncd
+2025-11-22 21:09:03.599399 [Debug] - RunShellCommand - sudo timedatectl set-ntp on - return: 0; error - 
+2025-11-22 21:09:03.599420 [Debug] - TimeSync System Command Success. Cmd: sudo timedatectl set-ntp on
+2025-11-22 21:09:03.620382 [Debug] - RunShellCommand - sudo timedatectl status - return: 0; error - 
+2025-11-22 21:09:03.620404 [Debug] - TimeSync Status:
+               Local time: Sat 2025-11-22 21:09:03 EST
+           Universal time: Sun 2025-11-23 02:09:03 UTC
+                 RTC time: Sun 2025-11-23 02:09:03
+                Time zone: America/New_York (EST, -0500)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+ 
+2025-11-22 21:09:03.620433 [Debug] - Starting discovery.
+2025-11-22 21:09:03.620439 [Debug] - Discovery - Service Files
+2025-11-22 21:09:03.620507 [Debug] -  /etc/systemd/system/KlipperScreen.service
+2025-11-22 21:09:03.620529 [Debug] -  /etc/systemd/system/ModemManager.service
+2025-11-22 21:09:03.620540 [Debug] -  /etc/systemd/system/bluetooth.target.wants
+2025-11-22 21:09:03.620561 [Debug] -    /etc/systemd/system/bluetooth.target.wants/bluetooth.service
+2025-11-22 21:09:03.620574 [Debug] -  /etc/systemd/system/cloud-config.target.wants
+2025-11-22 21:09:03.620594 [Debug] -    /etc/systemd/system/cloud-config.target.wants/cloud-init-hotplugd.socket
+2025-11-22 21:09:03.620605 [Debug] -  /etc/systemd/system/cloud-init.target.wants
+2025-11-22 21:09:03.620624 [Debug] -    /etc/systemd/system/cloud-init.target.wants/cloud-config.service
+2025-11-22 21:09:03.620634 [Debug] -    /etc/systemd/system/cloud-init.target.wants/cloud-final.service
+2025-11-22 21:09:03.620644 [Debug] -    /etc/systemd/system/cloud-init.target.wants/cloud-init-local.service
+2025-11-22 21:09:03.620653 [Debug] -    /etc/systemd/system/cloud-init.target.wants/cloud-init-main.service
+2025-11-22 21:09:03.620663 [Debug] -    /etc/systemd/system/cloud-init.target.wants/cloud-init-network.service
+2025-11-22 21:09:03.620673 [Debug] -  /etc/systemd/system/crowsnest.service
+2025-11-22 21:09:03.620681 [Debug] -  /etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service
+2025-11-22 21:09:03.620691 [Debug] -  /etc/systemd/system/dbus-org.bluez.service
+2025-11-22 21:09:03.620700 [Debug] -  /etc/systemd/system/dbus-org.freedesktop.Avahi.service
+2025-11-22 21:09:03.620709 [Debug] -  /etc/systemd/system/dbus-org.freedesktop.ModemManager1.service
+2025-11-22 21:09:03.620718 [Debug] -  /etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service
+2025-11-22 21:09:03.620728 [Debug] -  /etc/systemd/system/dbus-org.freedesktop.timesync1.service
+2025-11-22 21:09:03.620738 [Debug] -  /etc/systemd/system/default.target
+2025-11-22 21:09:03.620747 [Debug] -  /etc/systemd/system/getty.target.wants
+2025-11-22 21:09:03.620764 [Debug] -    /etc/systemd/system/getty.target.wants/getty@tty1.service
+2025-11-22 21:09:03.620774 [Debug] -  /etc/systemd/system/graphical.target.wants
+2025-11-22 21:09:03.620790 [Debug] -    /etc/systemd/system/graphical.target.wants/udisks2.service
+2025-11-22 21:09:03.620814 [Debug] -  /etc/systemd/system/klipper.service
+2025-11-22 21:09:03.620823 [Debug] -  /etc/systemd/system/moonraker.service
+2025-11-22 21:09:03.620831 [Debug] -  /etc/systemd/system/multi-user.target.wants
+2025-11-22 21:09:03.620858 [Debug] -    /etc/systemd/system/multi-user.target.wants/KlipperScreen.service
+2025-11-22 21:09:03.620867 [Debug] -    /etc/systemd/system/multi-user.target.wants/ModemManager.service
+2025-11-22 21:09:03.620875 [Debug] -    /etc/systemd/system/multi-user.target.wants/NetworkManager.service
+2025-11-22 21:09:03.620885 [Debug] -    /etc/systemd/system/multi-user.target.wants/avahi-daemon.service
+2025-11-22 21:09:03.620893 [Debug] -    /etc/systemd/system/multi-user.target.wants/console-setup.service
+2025-11-22 21:09:03.620902 [Debug] -    /etc/systemd/system/multi-user.target.wants/cron.service
+2025-11-22 21:09:03.620912 [Debug] -    /etc/systemd/system/multi-user.target.wants/crowsnest.service
+2025-11-22 21:09:03.620920 [Debug] -    /etc/systemd/system/multi-user.target.wants/e2scrub_reap.service
+2025-11-22 21:09:03.620929 [Debug] -    /etc/systemd/system/multi-user.target.wants/klipper.service
+2025-11-22 21:09:03.620938 [Debug] -    /etc/systemd/system/multi-user.target.wants/moonraker.service
+2025-11-22 21:09:03.620946 [Debug] -    /etc/systemd/system/multi-user.target.wants/nginx.service
+2025-11-22 21:09:03.620955 [Debug] -    /etc/systemd/system/multi-user.target.wants/remote-fs.target
+2025-11-22 21:09:03.620964 [Debug] -    /etc/systemd/system/multi-user.target.wants/rpi-eeprom-update.service
+2025-11-22 21:09:03.620973 [Debug] -    /etc/systemd/system/multi-user.target.wants/ssh.service
+2025-11-22 21:09:03.620982 [Debug] -    /etc/systemd/system/multi-user.target.wants/sshswitch.service
+2025-11-22 21:09:03.620991 [Debug] -    /etc/systemd/system/multi-user.target.wants/wpa_supplicant.service
+2025-11-22 21:09:03.621001 [Debug] -  /etc/systemd/system/network-online.target.wants
+2025-11-22 21:09:03.621017 [Debug] -    /etc/systemd/system/network-online.target.wants/NetworkManager-wait-online.service
+2025-11-22 21:09:03.621028 [Debug] -  /etc/systemd/system/sockets.target.wants
+2025-11-22 21:09:03.621043 [Debug] -    /etc/systemd/system/sockets.target.wants/avahi-daemon.socket
+2025-11-22 21:09:03.621053 [Debug] -  /etc/systemd/system/ssh.service.wants
+2025-11-22 21:09:03.621068 [Debug] -    /etc/systemd/system/ssh.service.wants/sshd-keygen.service
+2025-11-22 21:09:03.621078 [Debug] -  /etc/systemd/system/ssh.socket.wants
+2025-11-22 21:09:03.621827 [Debug] -    /etc/systemd/system/ssh.socket.wants/sshd-keygen.service
+2025-11-22 21:09:03.621867 [Debug] -  /etc/systemd/system/sshd.service
+2025-11-22 21:09:03.621878 [Debug] -  /etc/systemd/system/sshd.service.wants
+2025-11-22 21:09:03.621898 [Debug] -    /etc/systemd/system/sshd.service.wants/sshd-keygen.service
+2025-11-22 21:09:03.621912 [Debug] -  /etc/systemd/system/sshd@.service.wants
+2025-11-22 21:09:03.621928 [Debug] -    /etc/systemd/system/sshd@.service.wants/sshd-keygen.service
+2025-11-22 21:09:03.621938 [Debug] -  /etc/systemd/system/sysinit.target.wants
+2025-11-22 21:09:03.622009 [Debug] -    /etc/systemd/system/sysinit.target.wants/apparmor.service
+2025-11-22 21:09:03.622021 [Debug] -    /etc/systemd/system/sysinit.target.wants/keyboard-setup.service
+2025-11-22 21:09:03.622031 [Debug] -    /etc/systemd/system/sysinit.target.wants/regenerate_ssh_host_keys.service
+2025-11-22 21:09:03.622040 [Debug] -    /etc/systemd/system/sysinit.target.wants/systemd-pstore.service
+2025-11-22 21:09:03.622049 [Debug] -    /etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service
+2025-11-22 21:09:03.622058 [Debug] -  /etc/systemd/system/timers.target.wants
+2025-11-22 21:09:03.622078 [Debug] -    /etc/systemd/system/timers.target.wants/apt-daily-upgrade.timer
+2025-11-22 21:09:03.622089 [Debug] -    /etc/systemd/system/timers.target.wants/apt-daily.timer
+2025-11-22 21:09:03.622099 [Debug] -    /etc/systemd/system/timers.target.wants/dpkg-db-backup.timer
+2025-11-22 21:09:03.622108 [Debug] -    /etc/systemd/system/timers.target.wants/e2scrub_all.timer
+2025-11-22 21:09:03.622117 [Debug] -    /etc/systemd/system/timers.target.wants/fstrim.timer
+2025-11-22 21:09:03.622127 [Debug] -    /etc/systemd/system/timers.target.wants/logrotate.timer
+2025-11-22 21:09:03.622136 [Debug] -    /etc/systemd/system/timers.target.wants/man-db.timer
+2025-11-22 21:09:03.622179 [Debug] - Discovery - Config Files In Home Path
+2025-11-22 21:09:03.711590 [Debug] -      /home/andre/KlipperScreen/config/defaults.conf
+2025-11-22 21:09:03.711616 [Debug] -      /home/andre/KlipperScreen/config/main_menu.conf
+2025-11-22 21:09:03.711625 [Debug] -      /home/andre/KlipperScreen/config/move_menu.conf
+2025-11-22 21:09:03.711634 [Debug] -      /home/andre/KlipperScreen/config/print_menu.conf
+2025-11-22 21:09:03.711642 [Debug] -      /home/andre/KlipperScreen/config/splash_menu.conf
+2025-11-22 21:09:03.713626 [Debug] -      /home/andre/KlipperScreen/styles/base.conf
+2025-11-22 21:09:03.714122 [Debug] -        /home/andre/KlipperScreen/styles/colorized/style.conf
+2025-11-22 21:09:03.714610 [Debug] -        /home/andre/KlipperScreen/styles/material-dark/style.conf
+2025-11-22 21:09:03.715148 [Debug] -        /home/andre/KlipperScreen/styles/material-darker/style.conf
+2025-11-22 21:09:03.715633 [Debug] -        /home/andre/KlipperScreen/styles/material-light/style.conf
+2025-11-22 21:09:03.716132 [Debug] -        /home/andre/KlipperScreen/styles/z-bolt/style.conf
+2025-11-22 21:09:03.722887 [Debug] -    /home/andre/ResHelper/paths.conf
+2025-11-22 21:09:03.733946 [Debug] -      /home/andre/crowsnest/resources/crowsnest.conf
+2025-11-22 21:09:03.743951 [Debug] -            /home/andre/kiauh/kiauh/components/moonraker/assets/moonraker.conf
+2025-11-22 21:09:03.744433 [Debug] -            /home/andre/kiauh/kiauh/components/webui_client/assets/common_vars.conf
+2025-11-22 21:09:03.744455 [Debug] -            /home/andre/kiauh/kiauh/components/webui_client/assets/upstreams.conf
+2025-11-22 21:09:03.746326 [Debug] -            /home/andre/kiauh/kiauh/extensions/pretty_gcode/assets/pgcode.local.conf
+2025-11-22 21:09:03.748296 [Debug] -        /home/andre/kiauh_backups/printer_data/config_20251122-202020/moonraker.conf
+2025-11-22 21:09:03.748622 [Debug] -        /home/andre/kiauh_backups/printer_data/config_20251122-204221/KlipperScreen.conf
+2025-11-22 21:09:03.748648 [Debug] -        /home/andre/kiauh_backups/printer_data/config_20251122-204221/crowsnest.conf
+2025-11-22 21:09:03.748673 [Debug] -        /home/andre/kiauh_backups/printer_data/config_20251122-204221/moonraker.conf
+2025-11-22 21:09:03.798548 [Debug] -    /home/andre/mainsail-config/mainsail-moonraker-update.conf
+2025-11-22 21:09:03.803100 [Debug] -      /home/andre/moonraker/docs/moonraker.conf
+2025-11-22 21:09:03.804151 [Debug] -          /home/andre/moonraker/tests/assets/moonraker/base_server.conf
+2025-11-22 21:09:03.804162 [Debug] -          /home/andre/moonraker/tests/assets/moonraker/base_server_ssl.conf
+2025-11-22 21:09:03.804170 [Debug] -          /home/andre/moonraker/tests/assets/moonraker/invalid_config.conf
+2025-11-22 21:09:03.804188 [Debug] -          /home/andre/moonraker/tests/assets/moonraker/supplemental.conf
+2025-11-22 21:09:03.804197 [Debug] -          /home/andre/moonraker/tests/assets/moonraker/unparsed_server.conf
+2025-11-22 21:09:03.830657 [Debug] -      /home/andre/printer_data/config/KlipperScreen.conf
+2025-11-22 21:09:03.830687 [Debug] -      /home/andre/printer_data/config/crowsnest.conf
+2025-11-22 21:09:03.830706 [Debug] -      /home/andre/printer_data/config/moonraker.conf
+2025-11-22 21:09:03.831620 [Debug] - Searching for moonraker config for /etc/systemd/system/moonraker.service
+2025-11-22 21:09:03.831701 [Debug] - Found possible path line: EnvironmentFile=/home/andre/printer_data/systemd/moonraker.env
+
+2025-11-22 21:09:03.831714 [Debug] - Parsed moonraker config path is [/home/andre/printer_data/systemd/moonraker.env] - From env parse.
+2025-11-22 21:09:03.831834 [Debug] - Moonraker config found in /home/andre/printer_data/config
+2025-11-22 21:09:03.831851 [Debug] - Moonraker service [/etc/systemd/system/moonraker.service] matched to [/home/andre/printer_data/config/moonraker.conf]
+2025-11-22 21:09:03.831908 [Info] - Only one moonraker instance was found, so we are using it! [moonraker.service:/home/andre/printer_data/config/moonraker.conf]
+2025-11-22 21:09:03.831943 [Info] - Starting configuration...
+2025-11-22 21:09:03.831949 [Debug] - Moonraker Service File Name: moonraker.service
+2025-11-22 21:09:03.831967 [Debug] - Printer data folder: /home/andre/printer_data
+2025-11-22 21:09:03.833388 [Info] - Found moonraker port 7125 in config file.
+2025-11-22 21:09:03.833415 [Info] - Configured. Service File Path: /etc/systemd/system/mobileraker.service, Config Dir: /home/andre/printer_data/config, Logs: /home/andre/printer_data/logs
+2025-11-22 21:09:03.833433 [Info] - Starting Config Writer...
+2025-11-22 21:09:03.834155 [Debug] - Mobileraker Config Path: /home/andre/printer_data/config/mobileraker.conf
+2025-11-22 21:09:03.834177 [Info] - Ensuring mobileraker config file exists and is setup correctly.
+2025-11-22 21:09:03.834317 [Info] - General section not found, creating it.
+2025-11-22 21:09:03.834363 [Warn] - Available Languages:
+2025-11-22 21:09:03.834384 [Info] -   1) de
+2025-11-22 21:09:03.834397 [Info] -   2) en
+2025-11-22 21:09:03.834409 [Info] -   3) fr
+2025-11-22 21:09:03.834421 [Info] -   4) hu
+2025-11-22 21:09:03.834434 [Info] -   5) uk
+2025-11-22 21:09:03.834447 [Info] -   6) ptbr
+2025-11-22 21:09:03.834461 [Info] -   7) zhhk
+2025-11-22 21:09:03.834473 [Info] -   8) zhcn
+2025-11-22 21:09:16.049823 [Info] - Selected language: en
+2025-11-22 21:09:16.049862 [Warn] - Note: The language selection can be changed in the mobileraker.conf file later.
+2025-11-22 21:09:16.049885 [Error] - Deprecation Warning: The selected language will only be used for app-versions below 2.7.1. For newer versions, the app will sync your mobile device language with the companion.
+2025-11-22 21:09:16.050094 [Warn] - No printer sections found in mobileraker.conf, adding a default one.
+2025-11-22 21:09:16.050127 [Info] - Do you want me to help you add a printer to the mobileraker.conf file or should I use the default settings?
+2025-11-22 21:09:25.990545 [Info] - Okay... I will guide you through the process of adding a printer to the config file.
+2025-11-22 21:09:25.990604 [Info] - Please provide the following information:
+2025-11-22 21:09:34.538860 [Info] - Printer Configuration for 'default':
+2025-11-22 21:09:34.538900 [Info] -   name: default
+2025-11-22 21:09:34.538921 [Info] -   moonraker_uri: 127.0.0.1
+2025-11-22 21:09:34.538938 [Info] -   moonraker_port: 7125
+2025-11-22 21:09:34.538954 [Info] -   moonraker_api_key: False
+2025-11-22 21:09:34.538968 [Info] -   snapshot_rotation: 0
+2025-11-22 21:09:40.340563 [Debug] - Writing config section: general
+2025-11-22 21:09:40.340643 [Debug] - Writing Option: language: en
+2025-11-22 21:09:40.340656 [Debug] - Checking for helpers: general.language
+2025-11-22 21:09:40.340667 [Debug] - Writing helper: # !!! DEPRECATED. The app now syncs the app's language to the companion
+2025-11-22 21:09:40.340676 [Debug] - Writing helper: # one of the supported languages defined in i18n.py#languages (de,en,...)
+2025-11-22 21:09:40.340746 [Debug] - Writing helper: # !!! For users from the UK: entering 'uk' will resolve to Ukrainian language, not English. Use 'en' for English!
+2025-11-22 21:09:40.340756 [Debug] - Writing helper: # Default: en
+2025-11-22 21:09:40.340773 [Debug] - Writing Option: timezone: EST
+2025-11-22 21:09:40.340781 [Debug] - Checking for helpers: general.timezone
+2025-11-22 21:09:40.340790 [Debug] - Writing helper: # The system's timezone e.g. Europe/Berlin for Berlin time or US/Central.
+2025-11-22 21:09:40.340796 [Debug] - Writing helper: # For more values see https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568
+2025-11-22 21:09:40.340803 [Debug] - Writing helper: # Default: Tries to use system timezone
+2025-11-22 21:09:40.340810 [Debug] - Writing helper: # Optional
+2025-11-22 21:09:40.340822 [Debug] - Writing Option: eta_format: %%d.%%m.%%Y, %%H:%%M:%%S
+2025-11-22 21:09:40.340830 [Debug] - Checking for helpers: general.eta_format
+2025-11-22 21:09:40.340837 [Debug] - Writing helper: # Format used for eta and adaptive_eta placeholder variables
+2025-11-22 21:09:40.340843 [Debug] - Writing helper: # For available options see https://strftime.org/
+2025-11-22 21:09:40.340850 [Debug] - Writing helper: # Note that you will have to escape the % char by using a 2nd one e.g.: %d/%m/%Y -> %%d/%%m/%%Y
+2025-11-22 21:09:40.340857 [Debug] - Writing helper: # Default: %%d.%%m.%%Y, %%H:%%M:%%S
+2025-11-22 21:09:40.340863 [Debug] - Writing helper: # Optional
+2025-11-22 21:09:40.340874 [Debug] - Writing Option: include_snapshot: True
+2025-11-22 21:09:40.340881 [Debug] - Checking for helpers: general.include_snapshot
+2025-11-22 21:09:40.340889 [Debug] - Writing helper: # !! SUPPORTER ONLY - This feature requires beeing a supporter of Mobileraker as of now!
+2025-11-22 21:09:40.340895 [Debug] - Writing helper: # Include a snapshot of the webcam in any print status/progress update notifications
+2025-11-22 21:09:40.340902 [Debug] - Writing helper: # Default: True
+2025-11-22 21:09:40.340908 [Debug] - Writing helper: # Optional
+2025-11-22 21:09:40.340920 [Debug] - Writing config section: printer default
+2025-11-22 21:09:40.340933 [Debug] - Writing Option: moonraker_uri: ws://127.0.0.1:7125/websocket
+2025-11-22 21:09:40.340941 [Debug] - Checking for helpers: printer.moonraker_uri
+2025-11-22 21:09:40.340948 [Debug] - Writing helper: # Define the uri to the moonraker instance.
+2025-11-22 21:09:40.340955 [Debug] - Writing helper: # Default value: ws://127.0.0.1:7125/websocket
+2025-11-22 21:09:40.340961 [Debug] - Writing helper: # Optional
+2025-11-22 21:09:40.340972 [Debug] - Writing Option: moonraker_api_key: False
+2025-11-22 21:09:40.340979 [Debug] - Checking for helpers: printer.moonraker_api_key
+2025-11-22 21:09:40.340986 [Debug] - Writing helper: # Moonraker API key if force_logins or trusted clients is active!
+2025-11-22 21:09:40.340993 [Debug] - Writing helper: # Default value: False
+2025-11-22 21:09:40.340999 [Debug] - Writing helper: # Optional
+2025-11-22 21:09:40.341009 [Debug] - Writing Option: snapshot_uri: http://127.0.0.1/webcam/?action=snapshot
+2025-11-22 21:09:40.341017 [Debug] - Checking for helpers: printer.snapshot_uri
+2025-11-22 21:09:40.341023 [Debug] - Writing helper: # !! SUPPORTER ONLY - This feature requires beeing a supporter of Mobileraker as of now!
+2025-11-22 21:09:40.341030 [Debug] - Writing helper: # The ABSOLUT url to the webcam, the companion should make a screenshot of.
+2025-11-22 21:09:40.341037 [Debug] - Writing helper: # Example MJPEG SnapShot url: http://192.168.178.135/webcam/?action=snapshot
+2025-11-22 21:09:40.341043 [Debug] - Writing helper: # Optional
+2025-11-22 21:09:40.341053 [Debug] - Writing Option: snapshot_rotation: 0
+2025-11-22 21:09:40.341060 [Debug] - Checking for helpers: printer.snapshot_rotation
+2025-11-22 21:09:40.341067 [Debug] - Writing helper: # !! SUPPORTER ONLY - This feature requires beeing a supporter of Mobileraker as of now!
+2025-11-22 21:09:40.341074 [Debug] - Writing helper: # The rotation of the snapshot in degrees
+2025-11-22 21:09:40.341081 [Debug] - Writing helper: # Default value: 0
+2025-11-22 21:09:40.341087 [Debug] - Writing helper: # Valud Values: 0,90,180,270
+2025-11-22 21:09:40.341093 [Debug] - Writing helper: # Optional
+2025-11-22 21:09:40.341103 [Debug] - Writing Option: ignore_filament_sensors: 
+2025-11-22 21:09:40.341110 [Debug] - Checking for helpers: printer.ignore_filament_sensors
+2025-11-22 21:09:40.341118 [Debug] - Writing helper: # Comma separated list of filament sensors to ignore, ignored filament sensors do not trigger
+2025-11-22 21:09:40.341124 [Debug] - Writing helper: # a notification if they are triggered. This is useful if you have a filament sensor that is used
+2025-11-22 21:09:40.341134 [Debug] - Writing helper: # in a MMU setup like ERCF.
+2025-11-22 21:09:40.341143 [Debug] - Writing helper: # IMPORTANT, do not include the sensor type. E.g. if your sensor is configured
+2025-11-22 21:09:40.341150 [Debug] - Writing helper: # like: [filament_switch_sensor printhead_sensor] add `printhead_sensor` to the list.
+2025-11-22 21:09:40.341156 [Debug] - Writing helper: # Default: empty
+2025-11-22 21:09:40.341163 [Debug] - Writing helper: # Optional
+2025-11-22 21:09:40.341235 [Info] - Wrote mobileraker config file to: /home/andre/printer_data/config/mobileraker.conf
+2025-11-22 21:09:40.341275 [Info] - Config Writer Completed.
+2025-11-22 21:09:40.341329 [Debug] - Updating file ownership for [/home/andre/mobileraker_companion] to [andre]...
+2025-11-22 21:09:40.343694 [Debug] - Updating file ownership for [/home/andre/printer_data/config/mobileraker.conf] to [andre]...
+2025-11-22 21:09:40.343814 [Debug] - Updating file ownership for [/home/andre/printer_data/config/moonraker.conf] to [andre]...
+2025-11-22 21:09:40.343916 [Info] - Setting Up System Service...
+2025-11-22 21:09:40.343958 [Debug] - Service config file contents to write:     # Mobileraker Companion Service File
+    [Unit]
+    Description=Companion app to enable push notifications via mobileraker
+    # Start after network and moonraker has started.
+    After=network-online.target moonraker.service
+
+    [Install]
+    WantedBy=multi-user.target
+
+    # Simple service, targeting the user that was used to install the service, simply running our moonraker py host script.
+    [Service]
+    Type=simple
+    User=andre
+    WorkingDirectory=/home/andre/mobileraker_companion
+    ExecStart=/home/andre/mobileraker-env/bin/python3 /home/andre/mobileraker_companion/mobileraker.py -l /home/andre/printer_data/logs -c /home/andre/printer_data/config/mobileraker.conf
+    Restart=always
+    # Since we will only restart on a fatal Logger.Error, set the restart time to be a bit higher, so we don't spin and spam.
+    RestartSec=10
+
+2025-11-22 21:09:40.343976 [Info] - Creating service file /etc/systemd/system/mobileraker.service...
+2025-11-22 21:09:40.344093 [Info] - Registering service...
+2025-11-22 21:09:40.858349 [Debug] - RunShellCommand - systemctl enable mobileraker - return: 0; error - Created symlink '/etc/systemd/system/multi-user.target.wants/mobileraker.service' → '/etc/systemd/system/mobileraker.service'.
+
+2025-11-22 21:09:41.323729 [Debug] - RunShellCommand - systemctl daemon-reload - return: 0; error - 
+2025-11-22 21:09:41.323798 [Info] - Starting service...
+2025-11-22 21:09:41.345506 [Debug] - RunShellCommand - systemctl restart mobileraker.service - return: 0; error - 
+2025-11-22 21:09:41.345565 [Info] - Service setup and start complete!
+2025-11-22 21:09:41.345593 [Info] - Adding service to moonraker asv file...
+2025-11-22 21:09:41.346152 [Info] - Added service to moonraker asv file.
+2025-11-22 21:09:41.346192 [Info] -   ~~~ Mobileraker Companion installation Complete ~~~
+2025-11-22 21:09:41.346201 [Info] -                    Happy Printing!
+2025-11-22 21:09:41.346212 [Error] -                           <3

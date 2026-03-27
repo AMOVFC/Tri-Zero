@@ -1,0 +1,12 @@
+[Unit]
+Description=Backup /home/andre to git main
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/home/andre/.config/backup-pie/config.env
+ExecStart=/bin/bash /home/andre/Backup-Pie/scripts/pi-home-sync.sh
+
+[Install]
+WantedBy=default.target

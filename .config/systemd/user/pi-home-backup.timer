@@ -1,0 +1,11 @@
+[Unit]
+Description=Run pi home backup every 2 minutes
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=2min
+Unit=pi-home-backup.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target

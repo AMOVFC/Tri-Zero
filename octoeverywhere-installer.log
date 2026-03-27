@@ -1,0 +1,286 @@
+2025-11-22 21:19:27.792705 [Debug] - Parsing script cmd line args.
+2025-11-22 21:19:27.792808 [Debug] - Os Type Detected: 1
+2025-11-22 21:19:27.792819 [Debug] - Validating args
+2025-11-22 21:19:27.793190 [Debug] - Installer Phase: Startup, OsType: 1, Target: LocalMoonraker
+2025-11-22 21:19:27.793220 [Info] - Creating new session for https://octoeverywhere.com
+2025-11-22 21:19:27.794052 [Info] - Ensuring that time sync is enabled...
+2025-11-22 21:19:28.999177 [Debug] - RunShellCommand - sudo apt -y purge ntp ntpdate ntpsec-ntpdate - return: 0; error - 
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+2025-11-22 21:19:28.999198 [Debug] - TimeSync System Command Success. Cmd: sudo apt -y purge ntp ntpdate ntpsec-ntpdate
+2025-11-22 21:19:30.226302 [Debug] - RunShellCommand - sudo apt install -y systemd-timesyncd - return: 0; error - 
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+2025-11-22 21:19:30.226324 [Debug] - TimeSync System Command Success. Cmd: sudo apt install -y systemd-timesyncd
+2025-11-22 21:19:30.327021 [Debug] - RunShellCommand - sudo timedatectl status - return: 0; error - 
+2025-11-22 21:19:30.327044 [Debug] - TimeSync Status:
+               Local time: Sat 2025-11-22 21:19:30 EST
+           Universal time: Sun 2025-11-23 02:19:30 UTC
+                 RTC time: Sun 2025-11-23 02:19:30
+                Time zone: America/New_York (EST, -0500)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+ 
+2025-11-22 21:19:30.715681 [Debug] - RunShellCommand - sudo systemctl daemon-reload - return: 0; error - 
+2025-11-22 21:19:30.715702 [Debug] - TimeSync System Command Success. Cmd: sudo systemctl daemon-reload
+2025-11-22 21:19:31.124443 [Debug] - RunShellCommand - sudo systemctl enable systemd-timesyncd - return: 0; error - 
+2025-11-22 21:19:31.124465 [Debug] - TimeSync System Command Success. Cmd: sudo systemctl enable systemd-timesyncd
+2025-11-22 21:19:31.223086 [Debug] - RunShellCommand - sudo systemctl restart systemd-timesyncd - return: 0; error - 
+2025-11-22 21:19:31.223107 [Debug] - TimeSync System Command Success. Cmd: sudo systemctl restart systemd-timesyncd
+2025-11-22 21:19:31.248439 [Debug] - RunShellCommand - sudo timedatectl set-ntp on - return: 0; error - 
+2025-11-22 21:19:31.248459 [Debug] - TimeSync System Command Success. Cmd: sudo timedatectl set-ntp on
+2025-11-22 21:19:31.269733 [Debug] - RunShellCommand - sudo timedatectl status - return: 0; error - 
+2025-11-22 21:19:31.269769 [Debug] - TimeSync Status:
+               Local time: Sat 2025-11-22 21:19:31 EST
+           Universal time: Sun 2025-11-23 02:19:31 UTC
+                 RTC time: Sun 2025-11-23 02:19:31
+                Time zone: America/New_York (EST, -0500)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+ 
+2025-11-22 21:19:31.269835 [Info] - Installing system library dependencies. You might ask to enter your password...
+2025-11-22 21:19:31.278596 [Debug] - RunShellCommand - sudo time - return: 1; error - sudo: time: command not found
+
+2025-11-22 21:19:31.278811 [Debug] - Installing zstandard, this might take a moment...
+2025-11-22 21:19:31.278873 [Debug] - Starting discovery.
+2025-11-22 21:19:31.278883 [Debug] - Discovery - Service Files
+2025-11-22 21:19:31.279539 [Debug] -  /etc/systemd/system/KlipperScreen.service
+2025-11-22 21:19:31.279565 [Debug] -  /etc/systemd/system/ModemManager.service
+2025-11-22 21:19:31.279579 [Debug] -  /etc/systemd/system/bluetooth.target.wants
+2025-11-22 21:19:31.279607 [Debug] -    /etc/systemd/system/bluetooth.target.wants/bluetooth.service
+2025-11-22 21:19:31.279621 [Debug] -  /etc/systemd/system/cloud-config.target.wants
+2025-11-22 21:19:31.279639 [Debug] -    /etc/systemd/system/cloud-config.target.wants/cloud-init-hotplugd.socket
+2025-11-22 21:19:31.279651 [Debug] -  /etc/systemd/system/cloud-init.target.wants
+2025-11-22 21:19:31.279672 [Debug] -    /etc/systemd/system/cloud-init.target.wants/cloud-config.service
+2025-11-22 21:19:31.279683 [Debug] -    /etc/systemd/system/cloud-init.target.wants/cloud-final.service
+2025-11-22 21:19:31.279693 [Debug] -    /etc/systemd/system/cloud-init.target.wants/cloud-init-local.service
+2025-11-22 21:19:31.279703 [Debug] -    /etc/systemd/system/cloud-init.target.wants/cloud-init-main.service
+2025-11-22 21:19:31.279712 [Debug] -    /etc/systemd/system/cloud-init.target.wants/cloud-init-network.service
+2025-11-22 21:19:31.279722 [Debug] -  /etc/systemd/system/crowsnest.service
+2025-11-22 21:19:31.279731 [Debug] -  /etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service
+2025-11-22 21:19:31.279741 [Debug] -  /etc/systemd/system/dbus-org.bluez.service
+2025-11-22 21:19:31.279750 [Debug] -  /etc/systemd/system/dbus-org.freedesktop.Avahi.service
+2025-11-22 21:19:31.279759 [Debug] -  /etc/systemd/system/dbus-org.freedesktop.ModemManager1.service
+2025-11-22 21:19:31.279768 [Debug] -  /etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service
+2025-11-22 21:19:31.279778 [Debug] -  /etc/systemd/system/dbus-org.freedesktop.timesync1.service
+2025-11-22 21:19:31.279787 [Debug] -  /etc/systemd/system/default.target
+2025-11-22 21:19:31.279796 [Debug] -  /etc/systemd/system/default.target.wants
+2025-11-22 21:19:31.279817 [Debug] -    /etc/systemd/system/default.target.wants/klipper-backup-filewatch.service
+2025-11-22 21:19:31.279827 [Debug] -    /etc/systemd/system/default.target.wants/klipper-backup-on-boot.service
+2025-11-22 21:19:31.279837 [Debug] -  /etc/systemd/system/getty.target.wants
+2025-11-22 21:19:31.279854 [Debug] -    /etc/systemd/system/getty.target.wants/getty@tty1.service
+2025-11-22 21:19:31.279864 [Debug] -  /etc/systemd/system/graphical.target.wants
+2025-11-22 21:19:31.279881 [Debug] -    /etc/systemd/system/graphical.target.wants/udisks2.service
+2025-11-22 21:19:31.279891 [Debug] -  /etc/systemd/system/klipper-backup-filewatch.service
+2025-11-22 21:19:31.279899 [Debug] -  /etc/systemd/system/klipper-backup-on-boot.service
+2025-11-22 21:19:31.279906 [Debug] -  /etc/systemd/system/klipper.service
+2025-11-22 21:19:31.279915 [Debug] -  /etc/systemd/system/mobileraker.service
+2025-11-22 21:19:31.279922 [Debug] -  /etc/systemd/system/moonraker.service
+2025-11-22 21:19:31.279930 [Debug] -  /etc/systemd/system/multi-user.target.wants
+2025-11-22 21:19:31.279960 [Debug] -    /etc/systemd/system/multi-user.target.wants/KlipperScreen.service
+2025-11-22 21:19:31.279969 [Debug] -    /etc/systemd/system/multi-user.target.wants/ModemManager.service
+2025-11-22 21:19:31.279978 [Debug] -    /etc/systemd/system/multi-user.target.wants/NetworkManager.service
+2025-11-22 21:19:31.279986 [Debug] -    /etc/systemd/system/multi-user.target.wants/avahi-daemon.service
+2025-11-22 21:19:31.279994 [Debug] -    /etc/systemd/system/multi-user.target.wants/console-setup.service
+2025-11-22 21:19:31.280004 [Debug] -    /etc/systemd/system/multi-user.target.wants/cron.service
+2025-11-22 21:19:31.280013 [Debug] -    /etc/systemd/system/multi-user.target.wants/crowsnest.service
+2025-11-22 21:19:31.280021 [Debug] -    /etc/systemd/system/multi-user.target.wants/e2scrub_reap.service
+2025-11-22 21:19:31.280031 [Debug] -    /etc/systemd/system/multi-user.target.wants/klipper.service
+2025-11-22 21:19:31.280039 [Debug] -    /etc/systemd/system/multi-user.target.wants/mobileraker.service
+2025-11-22 21:19:31.280047 [Debug] -    /etc/systemd/system/multi-user.target.wants/moonraker.service
+2025-11-22 21:19:31.280055 [Debug] -    /etc/systemd/system/multi-user.target.wants/nginx.service
+2025-11-22 21:19:31.280064 [Debug] -    /etc/systemd/system/multi-user.target.wants/octoeverywhere.service
+2025-11-22 21:19:31.280074 [Debug] -    /etc/systemd/system/multi-user.target.wants/remote-fs.target
+2025-11-22 21:19:31.280082 [Debug] -    /etc/systemd/system/multi-user.target.wants/rpi-eeprom-update.service
+2025-11-22 21:19:31.280091 [Debug] -    /etc/systemd/system/multi-user.target.wants/ssh.service
+2025-11-22 21:19:31.280100 [Debug] -    /etc/systemd/system/multi-user.target.wants/sshswitch.service
+2025-11-22 21:19:31.280110 [Debug] -    /etc/systemd/system/multi-user.target.wants/wpa_supplicant.service
+2025-11-22 21:19:31.280173 [Debug] -  /etc/systemd/system/network-online.target.wants
+2025-11-22 21:19:31.280196 [Debug] -    /etc/systemd/system/network-online.target.wants/NetworkManager-wait-online.service
+2025-11-22 21:19:31.280210 [Debug] -  /etc/systemd/system/octoeverywhere.service
+2025-11-22 21:19:31.280219 [Debug] -  /etc/systemd/system/sockets.target.wants
+2025-11-22 21:19:31.280239 [Debug] -    /etc/systemd/system/sockets.target.wants/avahi-daemon.socket
+2025-11-22 21:19:31.280250 [Debug] -  /etc/systemd/system/ssh.service.wants
+2025-11-22 21:19:31.280268 [Debug] -    /etc/systemd/system/ssh.service.wants/sshd-keygen.service
+2025-11-22 21:19:31.280280 [Debug] -  /etc/systemd/system/ssh.socket.wants
+2025-11-22 21:19:31.280301 [Debug] -    /etc/systemd/system/ssh.socket.wants/sshd-keygen.service
+2025-11-22 21:19:31.280311 [Debug] -  /etc/systemd/system/sshd.service
+2025-11-22 21:19:31.280321 [Debug] -  /etc/systemd/system/sshd.service.wants
+2025-11-22 21:19:31.280337 [Debug] -    /etc/systemd/system/sshd.service.wants/sshd-keygen.service
+2025-11-22 21:19:31.280347 [Debug] -  /etc/systemd/system/sshd@.service.wants
+2025-11-22 21:19:31.280363 [Debug] -    /etc/systemd/system/sshd@.service.wants/sshd-keygen.service
+2025-11-22 21:19:31.280372 [Debug] -  /etc/systemd/system/sysinit.target.wants
+2025-11-22 21:19:31.280391 [Debug] -    /etc/systemd/system/sysinit.target.wants/apparmor.service
+2025-11-22 21:19:31.280400 [Debug] -    /etc/systemd/system/sysinit.target.wants/keyboard-setup.service
+2025-11-22 21:19:31.280410 [Debug] -    /etc/systemd/system/sysinit.target.wants/regenerate_ssh_host_keys.service
+2025-11-22 21:19:31.280419 [Debug] -    /etc/systemd/system/sysinit.target.wants/systemd-pstore.service
+2025-11-22 21:19:31.280428 [Debug] -    /etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service
+2025-11-22 21:19:31.280436 [Debug] -  /etc/systemd/system/timers.target.wants
+2025-11-22 21:19:31.280456 [Debug] -    /etc/systemd/system/timers.target.wants/apt-daily-upgrade.timer
+2025-11-22 21:19:31.280465 [Debug] -    /etc/systemd/system/timers.target.wants/apt-daily.timer
+2025-11-22 21:19:31.280475 [Debug] -    /etc/systemd/system/timers.target.wants/dpkg-db-backup.timer
+2025-11-22 21:19:31.280484 [Debug] -    /etc/systemd/system/timers.target.wants/e2scrub_all.timer
+2025-11-22 21:19:31.280494 [Debug] -    /etc/systemd/system/timers.target.wants/fstrim.timer
+2025-11-22 21:19:31.280503 [Debug] -    /etc/systemd/system/timers.target.wants/logrotate.timer
+2025-11-22 21:19:31.280512 [Debug] -    /etc/systemd/system/timers.target.wants/man-db.timer
+2025-11-22 21:19:31.280565 [Debug] - Discovery - Config Files In Home Path
+2025-11-22 21:19:31.287185 [Debug] -      /home/andre/KlipperScreen/config/defaults.conf
+2025-11-22 21:19:31.287206 [Debug] -      /home/andre/KlipperScreen/config/main_menu.conf
+2025-11-22 21:19:31.287216 [Debug] -      /home/andre/KlipperScreen/config/move_menu.conf
+2025-11-22 21:19:31.287224 [Debug] -      /home/andre/KlipperScreen/config/print_menu.conf
+2025-11-22 21:19:31.287232 [Debug] -      /home/andre/KlipperScreen/config/splash_menu.conf
+2025-11-22 21:19:31.289240 [Debug] -      /home/andre/KlipperScreen/styles/base.conf
+2025-11-22 21:19:31.289781 [Debug] -        /home/andre/KlipperScreen/styles/colorized/style.conf
+2025-11-22 21:19:31.290299 [Debug] -        /home/andre/KlipperScreen/styles/material-dark/style.conf
+2025-11-22 21:19:31.290802 [Debug] -        /home/andre/KlipperScreen/styles/material-darker/style.conf
+2025-11-22 21:19:31.291290 [Debug] -        /home/andre/KlipperScreen/styles/material-light/style.conf
+2025-11-22 21:19:31.291795 [Debug] -        /home/andre/KlipperScreen/styles/z-bolt/style.conf
+2025-11-22 21:19:31.292233 [Debug] -    /home/andre/ResHelper/paths.conf
+2025-11-22 21:19:31.294582 [Debug] -      /home/andre/crowsnest/resources/crowsnest.conf
+2025-11-22 21:19:31.296603 [Debug] -            /home/andre/kiauh/kiauh/components/moonraker/assets/moonraker.conf
+2025-11-22 21:19:31.296799 [Debug] -            /home/andre/kiauh/kiauh/components/webui_client/assets/common_vars.conf
+2025-11-22 21:19:31.296814 [Debug] -            /home/andre/kiauh/kiauh/components/webui_client/assets/upstreams.conf
+2025-11-22 21:19:31.297973 [Debug] -            /home/andre/kiauh/kiauh/extensions/pretty_gcode/assets/pgcode.local.conf
+2025-11-22 21:19:31.298391 [Debug] -        /home/andre/kiauh_backups/printer_data/config_20251122-202020/moonraker.conf
+2025-11-22 21:19:31.298471 [Debug] -        /home/andre/kiauh_backups/printer_data/config_20251122-204221/KlipperScreen.conf
+2025-11-22 21:19:31.298488 [Debug] -        /home/andre/kiauh_backups/printer_data/config_20251122-204221/crowsnest.conf
+2025-11-22 21:19:31.298506 [Debug] -        /home/andre/kiauh_backups/printer_data/config_20251122-204221/moonraker.conf
+2025-11-22 21:19:31.298544 [Debug] -        /home/andre/kiauh_backups/printer_data/config_20251122-210941/moonraker.conf
+2025-11-22 21:19:31.310041 [Debug] -      /home/andre/klipper-backup/install-files/moonraker.conf
+2025-11-22 21:19:31.316123 [Debug] -    /home/andre/mainsail-config/mainsail-moonraker-update.conf
+2025-11-22 21:19:31.319542 [Debug] -      /home/andre/moonraker/docs/moonraker.conf
+2025-11-22 21:19:31.320610 [Debug] -          /home/andre/moonraker/tests/assets/moonraker/base_server.conf
+2025-11-22 21:19:31.320622 [Debug] -          /home/andre/moonraker/tests/assets/moonraker/base_server_ssl.conf
+2025-11-22 21:19:31.320630 [Debug] -          /home/andre/moonraker/tests/assets/moonraker/invalid_config.conf
+2025-11-22 21:19:31.320646 [Debug] -          /home/andre/moonraker/tests/assets/moonraker/supplemental.conf
+2025-11-22 21:19:31.320655 [Debug] -          /home/andre/moonraker/tests/assets/moonraker/unparsed_server.conf
+2025-11-22 21:19:31.331275 [Debug] -      /home/andre/printer_data/config/KlipperScreen.conf
+2025-11-22 21:19:31.331306 [Debug] -      /home/andre/printer_data/config/crowsnest.conf
+2025-11-22 21:19:31.331323 [Debug] -      /home/andre/printer_data/config/mobileraker.conf
+2025-11-22 21:19:31.331331 [Debug] -      /home/andre/printer_data/config/moonraker.conf
+2025-11-22 21:19:31.331347 [Debug] -      /home/andre/printer_data/config/octoeverywhere.conf
+2025-11-22 21:19:31.332399 [Debug] - Searching for moonraker config for /etc/systemd/system/moonraker.service
+2025-11-22 21:19:31.332492 [Debug] - Found possible path line: EnvironmentFile=/home/andre/printer_data/systemd/moonraker.env
+
+2025-11-22 21:19:31.332506 [Debug] - Parsed moonraker config path is [/home/andre/printer_data/systemd/moonraker.env] - From env parse.
+2025-11-22 21:19:31.332656 [Debug] - Moonraker config found in /home/andre/printer_data/config
+2025-11-22 21:19:31.332674 [Debug] - Moonraker service [/etc/systemd/system/moonraker.service] matched to [/home/andre/printer_data/config/moonraker.conf]
+2025-11-22 21:19:31.332690 [Debug] - Only one moonraker instance was found, so we are using it! [moonraker.service:/home/andre/printer_data/config/moonraker.conf]
+2025-11-22 21:19:31.332770 [Info] - Starting configuration...
+2025-11-22 21:19:31.332780 [Debug] - Moonraker Service File Name: moonraker.service, Suffix: ''
+2025-11-22 21:19:31.332792 [Debug] - Printer data folder: /home/andre/printer_data
+2025-11-22 21:19:31.332805 [Debug] - Enuring path and permissions [/home/andre/printer_data/octoeverywhere-store]...
+2025-11-22 21:19:31.332814 [Debug] - Dir already exists.
+2025-11-22 21:19:31.332819 [Debug] - Setting owner permissions to the service user [andre]...
+2025-11-22 21:19:31.332902 [Debug] - Directory setup successfully.
+2025-11-22 21:19:31.332918 [Debug] - Configured. Service: octoeverywhere, Path: /etc/systemd/system/octoeverywhere.service, LocalStorage: /home/andre/printer_data/octoeverywhere-store, Config Dir: /home/andre/printer_data/config, Logs: /home/andre/printer_data/logs
+2025-11-22 21:19:31.332952 [Debug] - Starting Web Interface Setup
+2025-11-22 21:19:31.333852 [Info] - A web interface is already setup:
+2025-11-22 21:19:31.333882 [Info] - Mainsail on port 80
+2025-11-22 21:19:32.490145 [Debug] - RunShellCommand - sudo apt-get install zstd -y - return: 0; error - 
+2025-11-22 21:19:32.490168 [Debug] - Zstandard apt install result. Code: 0, StdOut: Reading package lists...
+Building dependency tree...
+Reading state information...
+zstd is already the newest version (1.5.7+dfsg-1).
+The following packages were automatically installed and are no longer required:
+  libyuv0 rpi-systemd-config systemd-zram-generator
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 33 not upgraded.
+, StdErr: 
+2025-11-22 21:19:36.439364 [Debug] - Found existing OctoEverywhere service secrets config.
+2025-11-22 21:19:36.439909 [Debug] - Service secrets config contents:[secrets]
+# Uniquely identifies your printer. Don't change or will have to re-link your printer with the service.
+printer_id = GOXSU97Q8WYY32L43BVELQ6E6DE0549M86OHY1VF4LIM2XMYC61ZAN8BS9PO
+# A private key linked to your printer ID. NEVER share this and also don't change it.
+private_key = cfXOTQt63u9VXMPKyH9eSK9qrjxEt34tjmr7GTYkwa4fqPkuE3pJV2WKgOUrB5jfwLRX1ZqeGoWm3dbr
+
+
+2025-11-22 21:19:36.443880 [Info] - Finishing system dependencies install. This might take a moment...
+2025-11-22 21:19:38.444816 [Info] - Installing zstandard python libs...
+2025-11-22 21:19:46.716006 [Debug] - Zstandard PIP install result. Code: 1, StdOut: b"Collecting zstandard<0.23.0,>=0.21.0\n  Using cached zstandard-0.22.0.tar.gz (660 kB)\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'error'\n", StdErr: b"  error: subprocess-exited-with-error\n  \n  \xc3\x97 installing build dependencies for zstandard did not run successfully.\n  \xe2\x94\x82 exit code: 1\n  \xe2\x95\xb0\xe2\x94\x80> [92 lines of output]\n      Collecting cffi==1.16.0\n        Using cached cffi-1.16.0.tar.gz (512 kB)\n        Installing build dependencies: started\n        Installing build dependencies: finished with status 'done'\n        Getting requirements to build wheel: started\n        Getting requirements to build wheel: finished with status 'done'\n        Preparing metadata (pyproject.toml): started\n        Preparing metadata (pyproject.toml): finished with status 'done'\n      Collecting setuptools==68.2.2\n        Using cached setuptools-68.2.2-py3-none-any.whl.metadata (6.3 kB)\n      Collecting wheel==0.41.2\n        Using cached wheel-0.41.2-py3-none-any.whl.metadata (2.2 kB)\n      Collecting pycparser (from cffi==1.16.0)\n        Using cached pycparser-2.23-py3-none-any.whl.metadata (993 bytes)\n      Using cached setuptools-68.2.2-py3-none-any.whl (807 kB)\n      Using cached wheel-0.41.2-py3-none-any.whl (64 kB)\n      Using cached pycparser-2.23-py3-none-any.whl (118 kB)\n      Building wheels for collected packages: cffi\n        Building wheel for cffi (pyproject.toml): started\n        Building wheel for cffi (pyproject.toml): finished with status 'error'\n        error: subprocess-exited-with-error\n      \n        \xc3\x97 Building wheel for cffi (pyproject.toml) did not run successfully.\n        \xe2\x94\x82 exit code: 1\n        \xe2\x95\xb0\xe2\x94\x80> [58 lines of output]\n            /tmp/pip-build-env-9sbigf40/overlay/lib/python3.13/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.\n            !!\n      \n                    ********************************************************************************\n                    Please consider removing the following classifiers in favor of a SPDX license expression:\n      \n                    License :: OSI Approved :: MIT License\n      \n                    See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.\n                    ********************************************************************************\n      \n            !!\n              self._finalize_license_expression()\n            running bdist_wheel\n            running build\n            running build_py\n            creating build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/verifier.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/vengine_gen.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/vengine_cpy.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/setuptools_ext.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/recompiler.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/pkgconfig.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/model.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/lock.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/ffiplatform.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/error.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/cparser.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/commontypes.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/cffi_opcode.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/backend_ctypes.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/api.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/_shimmed_dist_utils.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/_imp_emulation.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/__init__.py -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/_cffi_include.h -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/parse_c_type.h -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/_embedding.h -> build/lib.linux-aarch64-cpython-313/cffi\n            copying src/cffi/_cffi_errors.h -> build/lib.linux-aarch64-cpython-313/cffi\n            running build_ext\n            building '_cffi_backend' extension\n            creating build/temp.linux-aarch64-cpython-313/src/c\n            arm-linux-gnueabihf-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DFFI_BUILDING=1 -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE -I/home/andre/octoeverywhere-env/include -I/usr/include/python3.13 -c src/c/_cffi_backend.c -o build/temp.linux-aarch64-cpython-313/src/c/_cffi_backend.o\n            src/c/_cffi_backend.c: In function \xe2\x80\x98b_do_dlopen\xe2\x80\x99:\n            src/c/_cffi_backend.c:4532:22: warning: \xe2\x80\x98Py_FileSystemDefaultEncoding\xe2\x80\x99 is deprecated [-Wdeprecated-declarations]\n             4532 |                      Py_FileSystemDefaultEncoding, &filename_or_null, &flags))\n                  |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n            In file included from /usr/include/python3.13/Python.h:99,\n                             from src/c/_cffi_backend.c:2:\n            /usr/include/python3.13/fileobject.h:22:46: note: declared here\n               22 | Py_DEPRECATED(3.12) PyAPI_DATA(const char *) Py_FileSystemDefaultEncoding;\n                  |                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n            src/c/_cffi_backend.c: In function \xe2\x80\x98_my_PyErr_WriteUnraisable\xe2\x80\x99:\n            src/c/_cffi_backend.c:6121:9: error: implicit declaration of function \xe2\x80\x98_PyErr_WriteUnraisableMsg\xe2\x80\x99; did you mean \xe2\x80\x98PyErr_WriteUnraisable\xe2\x80\x99? [-Wimplicit-function-declaration]\n             6121 |         _PyErr_WriteUnraisableMsg(PyText_AS_UTF8(s), NULL);\n                  |         ^~~~~~~~~~~~~~~~~~~~~~~~~\n                  |         PyErr_WriteUnraisable\n            error: command '/usr/bin/arm-linux-gnueabihf-gcc' failed with exit code 1\n            [end of output]\n      \n        note: This error originates from a subprocess, and is likely not a problem with pip.\n        ERROR: Failed building wheel for cffi\n      Failed to build cffi\n      error: failed-wheel-build-for-install\n      \n      \xc3\x97 Failed to build installable wheels for some pyproject.toml based projects\n      \xe2\x95\xb0\xe2\x94\x80> cffi\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nERROR: Failed to build 'zstandard' when installing build dependencies for zstandard\n", Time: 15.437162637710571
+2025-11-22 21:19:46.716039 [Debug] - Installing ffmpeg, this might take a moment...
+2025-11-22 21:19:47.930732 [Debug] - RunShellCommand - sudo apt-get install ffmpeg -y - return: 0; error - 
+2025-11-22 21:19:47.930766 [Debug] - FFmpeg install result. Code: 0, StdOut: Reading package lists...
+Building dependency tree...
+Reading state information...
+ffmpeg is already the newest version (8:7.1.2-0+deb13u1+rpt2).
+The following packages were automatically installed and are no longer required:
+  libyuv0 rpi-systemd-config systemd-zram-generator
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 33 not upgraded.
+, StdErr: , Time: 1.2147107124328613
+2025-11-22 21:19:48.445235 [Info] - Ffmpeg install complete
+2025-11-22 21:19:48.445286 [Info] - Setting Up OctoEverywhere's System Service...
+2025-11-22 21:19:48.445317 [Debug] - Service file already exists, recreating.
+2025-11-22 21:19:48.445400 [Debug] - Service config file contents to write:     # OctoEverywhere For Moonraker
+    [Unit]
+    Description=OctoEverywhere For Moonraker
+    # Start after network.
+    After=network-online.target moonraker.service
+
+    [Install]
+    WantedBy=multi-user.target
+
+    # Simple service, targeting the user that was used to install the service, simply running our py host script.
+    [Service]
+    Type=simple
+    User=andre
+    WorkingDirectory=/home/andre/octoeverywhere
+    ExecStart=/home/andre/octoeverywhere-env/bin/python3 -m moonraker_octoeverywhere "eyJDb25maWdGb2xkZXIiOiAiL2hvbWUvYW5kcmUvcHJpbnRlcl9kYXRhL2NvbmZpZyIsICJMb2dGb2xkZXIiOiAiL2hvbWUvYW5kcmUvcHJpbnRlcl9kYXRhL2xvZ3MiLCAiTG9jYWxGaWxlU3RvcmFnZVBhdGgiOiAiL2hvbWUvYW5kcmUvcHJpbnRlcl9kYXRhL29jdG9ldmVyeXdoZXJlLXN0b3JlIiwgIlNlcnZpY2VOYW1lIjogIm9jdG9ldmVyeXdoZXJlIiwgIlZpcnR1YWxFbnZQYXRoIjogIi9ob21lL2FuZHJlL29jdG9ldmVyeXdoZXJlLWVudiIsICJSZXBvUm9vdEZvbGRlciI6ICIvaG9tZS9hbmRyZS9vY3RvZXZlcnl3aGVyZSIsICJJc0NvbXBhbmlvbiI6IGZhbHNlLCAiTW9vbnJha2VyQ29uZmlnRmlsZSI6ICIvaG9tZS9hbmRyZS9wcmludGVyX2RhdGEvY29uZmlnL21vb25yYWtlci5jb25mIn0="
+    Restart=always
+    # Since we will only restart on a fatal Logger.Error, set the restart time to be a bit higher, so we don't spin and spam.
+    RestartSec=10
+
+2025-11-22 21:19:48.445409 [Debug] - Creating service file /etc/systemd/system/octoeverywhere.service...
+2025-11-22 21:19:48.445595 [Debug] - Registering service...
+2025-11-22 21:19:48.848185 [Debug] - RunShellCommand - systemctl enable octoeverywhere - return: 0; error - 
+2025-11-22 21:19:49.258161 [Debug] - RunShellCommand - systemctl daemon-reload - return: 0; error - 
+2025-11-22 21:19:49.258185 [Debug] - Starting service...
+2025-11-22 21:19:49.286935 [Debug] - RunShellCommand - systemctl stop octoeverywhere - return: 0; error - 
+2025-11-22 21:19:49.330118 [Debug] - RunShellCommand - systemctl start octoeverywhere - return: 0; error - 
+2025-11-22 21:19:49.330167 [Info] - Service setup and start complete!
+2025-11-22 21:19:49.330199 [Info] - Waiting for the plugin to produce a printer id... (this can take a few seconds)
+2025-11-22 21:19:49.430319 [Debug] - Found existing OctoEverywhere service secrets config.
+2025-11-22 21:19:49.430756 [Debug] - Service secrets config contents:[secrets]
+# Uniquely identifies your printer. Don't change or will have to re-link your printer with the service.
+printer_id = GOXSU97Q8WYY32L43BVELQ6E6DE0549M86OHY1VF4LIM2XMYC61ZAN8BS9PO
+# A private key linked to your printer ID. NEVER share this and also don't change it.
+private_key = cfXOTQt63u9VXMPKyH9eSK9qrjxEt34tjmr7GTYkwa4fqPkuE3pJV2WKgOUrB5jfwLRX1ZqeGoWm3dbr
+
+
+2025-11-22 21:19:49.482752 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:19:49.482821 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:19:49.482891 [Warn] - This printer isn't connected to an OctoEverywhere account.
+2025-11-22 21:20:29.200266 [Warn] - You're 10 seconds away from free and unlimited printer access from anywhere!
+2025-11-22 21:20:29.291893 [Warn] - To securely link this printer to your OctoEverywhere account, go to the following website and use the code.
+2025-11-22 21:20:29.291929 [Info] - Website: https://octoeverywhere.com/code
+2025-11-22 21:20:29.291943 [Info] - Code:    815193
+2025-11-22 21:20:29.291985 [Info] - Waiting for the printer to be linked to your account...
+2025-11-22 21:20:29.345520 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:29.345575 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:20:30.402183 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:30.402251 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:20:31.464253 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:31.464319 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:20:32.516988 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:32.517046 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:20:33.574429 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:33.574489 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:20:34.626160 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:34.626218 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:20:35.680834 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:35.680890 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:20:36.734101 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:36.734159 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:20:37.787727 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:37.787790 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:20:38.842762 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:38.842821 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:20:39.897160 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:39.897220 [Debug] - OE Printer API info; Name:Printer HasOwners:False
+2025-11-22 21:20:40.948640 [Debug] - OE Printer info API Result: 200
+2025-11-22 21:20:40.948701 [Debug] - OE Printer API info; Name:Printer HasOwners:False

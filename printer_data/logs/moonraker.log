@@ -290,3 +290,4 @@ Klipper Version: v0.13.0-593-g2f05309d-dirty
 2026-03-27 18:04:27,758 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: machine.device_power.devices, Code: -32601, Message: Method not found
 2026-03-27 18:04:29,288 [mqtt.py:_on_socket_open()] - MQTT Socket Opened
 2026-03-27 18:04:29,289 [mqtt.py:_on_connect()] - MQTT Client Connected
+2026-03-27 19:29:22,658 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 127.0.0.1

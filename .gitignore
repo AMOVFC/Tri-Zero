@@ -1,0 +1,17 @@
+# Application Binaries and Source (Managed by Update Manager)
+klipper/
+moonraker/
+Backup-Pie/
+voronv0-backup-repo/
+config_backup/
+
+# Logs and Caches (To keep backup small)
+*.log
+*.tmp
+.cache/
+printer_data/logs/
+printer_data/comms/
+
+# Hidden System Folders
+.ssh/
+.gnupg/

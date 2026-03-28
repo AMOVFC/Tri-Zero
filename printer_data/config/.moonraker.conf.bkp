@@ -141,3 +141,10 @@ state_response_template =
 	{set_result("humidity", d["humidity"]|float)}
 	{set_result("voc_index", d["voc_index"]|float)}
 
+[update_manager backup_pie]
+type = git_repo
+path = /home/andre/
+origin = https://github.com/AMOVFC/Backup-Pie
+primary_branch = main
+is_system_service = False
+

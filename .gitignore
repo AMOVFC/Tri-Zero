@@ -1,19 +1,24 @@
-# Application Binaries and Source (Managed by Update Manager)
+# Application Folders (Ignore everything Git found)
+Klipper-Adaptive-Meshing-Purging/
+KlipperScreen/
+ResHelper/
+crowsnest/
+fluidd/
+katapult/
+kiauh/
+klipper-backup/
+mainsail-config/
+mobileraker_companion/
+moonraker-timelapse/
+octoeverywhere/
 klipper/
 moonraker/
-Backup-Pie/
-voronv0-backup-repo/
-config_backup/
 
-# Logs and Caches (To keep backup small)
-*.log
-*.tmp
-.cache/
+# Hidden Files
+.version
+.wget-hsts
+
+# Data and Logs
 printer_data/logs/
-printer_data/comms/
-
-# Hidden System Folders
-.ssh/
-.gnupg/
 printer_data/database/
-printer_data/logs/
+*.log

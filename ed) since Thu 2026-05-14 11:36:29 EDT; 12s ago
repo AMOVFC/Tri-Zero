@@ -1,0 +1,8 @@
+[0;1;32m●[0m pi-home-backup.timer - Run pi home backup every 2 minutes
+     Loaded: loaded (]8;;file://Pi5VoronV0/home/andre/.config/systemd/user/pi-home-backup.timer\/home/andre/.config/systemd/user/pi-home-backup.timer]8;;\; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;32mactive (elapsed)[0m since Thu 2026-05-14 11:36:29 EDT; 12s ago
+ Invocation: 94f2480eb1d74b48b955fafcac561723
+    Trigger: n/a
+   Triggers: ● pi-home-backup.service
+
+May 14 11:36:29 Pi5VoronV0 systemd[2722]: Started pi-home-backup.timer - Run pi home backup every 2 minutes.

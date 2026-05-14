@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[user]
+	name = TZERO
+	email = TZERO@backup-pie.local
+[remote "origin"]
+	url = https://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@github.com/AMOVFC/Tri-Zero.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[credential]
+	helper = store --file /home/andre/.config/backup-pie/git-credentials
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main

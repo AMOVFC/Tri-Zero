@@ -1,0 +1,34 @@
+# Application Folders (Ignore everything Git found)
+Klipper-Adaptive-Meshing-Purging/
+KlipperScreen/
+ResHelper/
+crowsnest/
+fluidd/
+katapult/
+kiauh/
+klipper-backup/
+mainsail-config/
+mobileraker_companion/
+moonraker-timelapse/
+octoeverywhere/
+klipper/
+moonraker/
+
+# Hidden Files
+.version
+.wget-hsts
+
+# Data and Logs
+printer_data/logs/
+printer_data/database/
+*.log
+printer_data/gcodes/
+printer_data/gcodes/
+mainsail/
+Backup-Pie/
+.cache/
+crowsnest/bin/ustreamer/
+config_backup/
+voronv0-backup-repo/
+timelapse/
+timelapse/

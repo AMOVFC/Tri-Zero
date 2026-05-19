@@ -141,6 +141,7 @@ type = web
 persistent_files = 
 	config.json
 
+<<<<<<< HEAD
 [update_manager backup_pie]
 type = git_repo
 path = /home/andre/Backup-Pie
@@ -148,3 +149,5 @@ origin = https://github.com/AMOVFC/Backup-Pie.git
 primary_branch = main
 is_system_service = False
 
+=======
+>>>>>>> origin/main

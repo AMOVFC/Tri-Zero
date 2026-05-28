@@ -1,0 +1,19 @@
+[Unit]
+Description=Trigger backup on home directory file changes
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+EnvironmentFile=/home/andre/.config/backup-pie/config.env
+ExecStart=/bin/bash -c 'while true; do \
+  inotifywait -r -q -e modify,create,delete,move \
+    --exclude "/\.git/" \
+    "$BACKUP_WORKTREE" 2>/dev/null && sleep 3 && \
+    systemctl --user start pi-home-backup.service; \
+  done'
+
+[Install]
+WantedBy=default.target

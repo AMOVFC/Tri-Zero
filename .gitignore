@@ -32,3 +32,4 @@ config_backup/
 voronv0-backup-repo/
 timelapse/
 timelapse/
+*.gcode

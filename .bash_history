@@ -511,3 +511,123 @@ sudo chown -R andre:andre /home/andre/printer_data
 chmod -R 775 /home/andre/printer_data/config
 # Restart Moonraker to apply the changes
 sudo systemctl restart moonraker
+lsusb
+ls dev/serial/by-id/*
+ls dev/serial/*
+ls dev/
+ls ~/dev/
+cd
+ls
+ls /dev/serial/by-id/
+sudo apt-get install jq crudini
+cd ~/Backup-Pie
+./scripts/install.sh
+sed -n '1,10p' ~/.config/backup-pie/config.env
+sed -i 's|^BACKUP_COMMIT_PREFIX=.*|BACKUP_COMMIT_PREFIX="backup(printer)"|' ~/.config/backup-pie/config.env
+./scripts/install.sh
+sudo apt install inotify-tools
+systemctl --user daemon-reload
+systemctl --user enable --now pi-home-backup-watch.service
+systemctl --user status pi-home-backup-watch.service
+[200~journalctl --user -u pi-home-backup.service -n 50~
+journalctl --user -u pi-home-backup.service -n 50
+bash ~/Backup-Pie/scripts/pi-home-sync.sh
+bash <(cat <<'EOF'
+set -euo pipefail
+source "$HOME/.config/backup-pie/config.env"
+
+WORKTREE="${BACKUP_WORKTREE:-$HOME}"
+BRANCH="${BACKUP_BRANCH:-main}"
+REMOTE="${BACKUP_REMOTE:-origin}"
+PREFIX="${BACKUP_COMMIT_PREFIX:-backup(pi-home)}"
+
+log() { printf '[%s] %s\n' "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" "$*"; }
+r()   { git -C "$WORKTREE" "$@"; }
+
+log "Fetching $REMOTE/$BRANCH"
+r fetch "$REMOTE" "$BRANCH" 2>/dev/null || log "No remote branch yet; skipping snapshot"
+
+if r rev-parse --verify "$REMOTE/$BRANCH" >/dev/null 2>&1; then
+  snap="snapshot/$(date -u +'%Y-%m-%d')"
+  if ! r ls-remote --exit-code "$REMOTE" "refs/heads/$snap" >/dev/null 2>&1; then
+    log "Saving snapshot: $snap"
+    r push "$REMOTE" "$REMOTE/$BRANCH:refs/heads/$snap"
+  else
+    log "Snapshot already exists for today: $snap"
+  fi
+fi
+
+if [[ -n "$(r status --porcelain)" ]]; then
+  log "Committing local changes"
+  r add -A
+  r commit -m "$PREFIX: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+else
+  log "No local changes"
+fi
+
+log "Force-pushing to $REMOTE/$BRANCH"
+r push --force "$REMOTE" "$BRANCH"
+log "Done"
+EOF
+
+)
+# Check the credentials file looks right (token will be visible — run in private)
+cat ~/.config/backup-pie/git-credentials
+# Check git is pointing to that file for the home repo
+git -C ~ config credential.helper
+# Check what remote URL git is using
+git -C ~ remote get-url origin
+# Fix the remote URL to plain HTTPS (no token embedded)
+git -C ~ remote set-url origin https://github.com/AMOVFC/Tri-Zero.git
+# Save your token to the credentials file
+read -r -s -p "GitHub token: " tok && printf '\n' && printf 'https://x-access-token:%s@github.com\n' "$tok" > ~/.config/backup-pie/git-credentials && echo "Token saved."
+bash <(cat <<'EOF'
+set -euo pipefail
+source "$HOME/.config/backup-pie/config.env"
+
+WORKTREE="${BACKUP_WORKTREE:-$HOME}"
+BRANCH="${BACKUP_BRANCH:-main}"
+REMOTE="${BACKUP_REMOTE:-origin}"
+PREFIX="${BACKUP_COMMIT_PREFIX:-backup(pi-home)}"
+
+log() { printf '[%s] %s\n' "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" "$*"; }
+r()   { git -C "$WORKTREE" "$@"; }
+
+log "Fetching $REMOTE/$BRANCH"
+r fetch "$REMOTE" "$BRANCH" 2>/dev/null || log "No remote branch yet; skipping snapshot"
+
+if r rev-parse --verify "$REMOTE/$BRANCH" >/dev/null 2>&1; then
+  snap="snapshot/$(date -u +'%Y-%m-%d')"
+  if ! r ls-remote --exit-code "$REMOTE" "refs/heads/$snap" >/dev/null 2>&1; then
+    log "Saving snapshot: $snap"
+    r push "$REMOTE" "$REMOTE/$BRANCH:refs/heads/$snap"
+  else
+    log "Snapshot already exists for today: $snap"
+  fi
+fi
+
+if [[ -n "$(r status --porcelain)" ]]; then
+  log "Committing local changes"
+  r add -A
+  r commit -m "$PREFIX: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+else
+  log "No local changes"
+fi
+
+log "Force-pushing to $REMOTE/$BRANCH"
+r push --force "$REMOTE" "$BRANCH"
+log "Done"
+EOF
+
+)
+set -euo pipefail
+source "$HOME/.config/backup-pie/config.env"
+WORKTREE="${BACKUP_WORKTREE:-$HOME}"
+BRANCH="${BACKUP_BRANCH:-main}"
+REMOTE="${BACKUP_REMOTE:-origin}"
+PREFIX="${BACKUP_COMMIT_PREFIX:-backup(pi-home)}"
+log() { printf '[%s] %s\n' "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" "$*"; }
+r()   { git -C "$WORKTREE" "$@"; }
+log "Fetching $REMOTE/$BRANCH"
+r fetch "$REMOTE" "$BRANCH" 2>/dev/null || log "No remote branch yet; skipping snapshot"
+if r rev-parse --verify "$REMOTE/$BRANCH" >/dev/null 2>&1; then   snap="snapshot/$(date -u +'%Y-%m-%d')";   if ! r ls-remote --exit-code "$REMOTE" "refs/heads/$snap" >/dev/null 2>&1; then     log "Saving snapshot: $snap";     r push "$REMOTE" "$REMOTE/$BRANCH:refs/heads/$snap";   else     log "Snapshot already exists for today: $snap";   fi; fi

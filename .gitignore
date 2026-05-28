@@ -34,3 +34,4 @@ timelapse/
 timelapse/
 *.gcode
 .config/backup-pie/
+AFC-Klipper-Add-On/

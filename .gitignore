@@ -33,3 +33,4 @@ voronv0-backup-repo/
 timelapse/
 timelapse/
 *.gcode
+.config/backup-pie/

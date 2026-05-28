@@ -631,3 +631,134 @@ r()   { git -C "$WORKTREE" "$@"; }
 log "Fetching $REMOTE/$BRANCH"
 r fetch "$REMOTE" "$BRANCH" 2>/dev/null || log "No remote branch yet; skipping snapshot"
 if r rev-parse --verify "$REMOTE/$BRANCH" >/dev/null 2>&1; then   snap="snapshot/$(date -u +'%Y-%m-%d')";   if ! r ls-remote --exit-code "$REMOTE" "refs/heads/$snap" >/dev/null 2>&1; then     log "Saving snapshot: $snap";     r push "$REMOTE" "$REMOTE/$BRANCH:refs/heads/$snap";   else     log "Snapshot already exists for today: $snap";   fi; fi
+bash <(cat <<'EOF'
+set -euo pipefail
+source "$HOME/.config/backup-pie/config.env"
+
+WORKTREE="${BACKUP_WORKTREE:-$HOME}"
+BRANCH="${BACKUP_BRANCH:-main}"
+REMOTE="${BACKUP_REMOTE:-origin}"
+PREFIX="${BACKUP_COMMIT_PREFIX:-backup(pi-home)}"
+
+log() { printf '[%s] %s\n' "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" "$*"; }
+r()   { git -C "$WORKTREE" "$@"; }
+
+log "Fetching $REMOTE/$BRANCH"
+r fetch "$REMOTE" "$BRANCH" 2>/dev/null || log "No remote branch yet; skipping snapshot"
+
+if r rev-parse --verify "$REMOTE/$BRANCH" >/dev/null 2>&1; then
+  snap="snapshot/$(date -u +'%Y-%m-%d')"
+  if ! r ls-remote --exit-code "$REMOTE" "refs/heads/$snap" >/dev/null 2>&1; then
+    log "Saving snapshot: $snap"
+    r push "$REMOTE" "$REMOTE/$BRANCH:refs/heads/$snap"
+  else
+    log "Snapshot already exists for today: $snap"
+  fi
+fi
+
+if [[ -n "$(r status --porcelain)" ]]; then
+  log "Committing local changes"
+  r add -A
+  r commit -m "$PREFIX: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+else
+  log "No local changes"
+fi
+
+log "Force-pushing to $REMOTE/$BRANCH"
+r push --force "$REMOTE" "$BRANCH"
+log "Done"
+EOF
+
+)
+cd /backup-pie
+ls
+cd Backup-Pie
+ls
+cd scripts
+ls
+sh install.sh
+install.sh
+cd
+cd Backup-Pie
+./scripts/install.sh
+bash <(cat <<'EOF'
+set -euo pipefail
+source "$HOME/.config/backup-pie/config.env"
+
+WORKTREE="${BACKUP_WORKTREE:-$HOME}"
+BRANCH="${BACKUP_BRANCH:-main}"
+REMOTE="${BACKUP_REMOTE:-origin}"
+PREFIX="${BACKUP_COMMIT_PREFIX:-backup(pi-home)}"
+
+log() { printf '[%s] %s\n' "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" "$*"; }
+r()   { git -C "$WORKTREE" "$@"; }
+
+log "Fetching $REMOTE/$BRANCH"
+r fetch "$REMOTE" "$BRANCH" 2>/dev/null || log "No remote branch yet; skipping snapshot"
+
+if r rev-parse --verify "$REMOTE/$BRANCH" >/dev/null 2>&1; then
+  snap="snapshot/$(date -u +'%Y-%m-%d')"
+  if ! r ls-remote --exit-code "$REMOTE" "refs/heads/$snap" >/dev/null 2>&1; then
+    log "Saving snapshot: $snap"
+    r push "$REMOTE" "$REMOTE/$BRANCH:refs/heads/$snap"
+  else
+    log "Snapshot already exists for today: $snap"
+  fi
+fi
+
+if [[ -n "$(r status --porcelain)" ]]; then
+  log "Committing local changes"
+  r add -A
+  r commit -m "$PREFIX: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+else
+  log "No local changes"
+fi
+
+log "Force-pushing to $REMOTE/$BRANCH"
+r push --force "$REMOTE" "$BRANCH"
+log "Done"
+EOF
+
+
+)
+cd ~/Backup-Pie
+./scripts/install.sh
+# Add the config dir to gitignore permanently
+echo ".config/backup-pie/" >> ~/.gitignore
+# Remove it from git tracking
+git -C ~ rm -r --cached .config/backup-pie/
+# Amend the commit to remove the secret
+git -C ~ commit --amend --no-edit
+# Force push (secret is gone from the commit now)
+git -C ~ push --force origin main
+# Reset to the commit before the secret was added
+git -C ~ reset --hard 8424f5c^
+# Confirm .config/backup-pie/ is in gitignore
+grep -qxF '.config/backup-pie/' ~/.gitignore || echo '.config/backup-pie/' >> ~/.gitignore
+# Remove from index if somehow still tracked
+git -C ~ rm -r --cached .config/backup-pie/ 2>/dev/null || true
+# Fresh commit of current state (no secret this time)
+git -C ~ add -A
+git -C ~ commit -m "backup(printer): $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+# Force push
+git -C ~ push --force origin main
+cd ~/Backup-Pie && git pull origin main
+cd ~/Backup-Pie && ./scripts/install.sh
+cd ~/Backup-Pie && git pull origin main
+cd ~/Backup-Pie && ./scripts/install.sh
+cd
+ls
+cd..
+cd ./
+ls
+sudo apt update
+apt list --upgradable
+sudo apt full-upgrade -y
+./install-afc.sh -h
+sudo apt-get install jq crudini
+cd ~
+git clone https://github.com/AFCProject/AFC-Klipper-Add-On.git
+cd AFC-Klipper-Add-On
+./install-afc.sh
+cd
+sudo reboot

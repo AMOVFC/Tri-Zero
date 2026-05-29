@@ -762,3 +762,13 @@ cd AFC-Klipper-Add-On
 ./install-afc.sh
 cd
 sudo reboot
+lsusb
+ls dev/serial/by-id/**
+ls ../dev/serial/by-id/**
+ls ~/dev/serial/by-id/**
+cd ~/
+cd ../
+ls
+cd ../
+ls
+ls dev/serial/by-id/**

@@ -783,3 +783,30 @@ ls
 cd kiauh
 ls
 ./kiauh.sh
+cd ~/AFC-Klipper-Add-On
+git log --oneline -5
+grep -n "afc_stats" ~/klipper/klippy/extras/AFC.py | head -10
+sed -n '340,355p' ~/klipper/klippy/extras/AFC.py
+grep -A5 "Moonraker/Spoolman/afc_stats" ~/printer_data/logs/klippy.log | tail -20
+cat ~/printer_data/logs/AFC/AFC.log | grep -A10 "Moonraker\|spoolman\|afc_stats" | tail -30
+find ~/printer_data/logs -name "*.log" | xargs ls -la 2>/dev/null
+find ~/printer_data -name "AFC*" 2>/dev/null
+grep -A10 "Moonraker\|spoolman\|afc_stats\|Error" ~/printer_data/logs/AFC.log | grep -A10 "Moonraker/Spoolman" | tail -30
+grep -A10 "td1 error" ~/printer_data/logs/AFC.log | tail -30
+grep -i "error\|exception\|moonraker\|spoolman\|stats" ~/printer_data/logs/AFC.log | tail -30
+sed -n '1449,1453p' ~/klipper/klippy/extras/AFC.py
+sed -n '1806,1810p' ~/klipper/klippy/extras/AFC.py
+sed -n '1910,1914p' ~/klipper/klippy/extras/AFC.py
+sed -i 's/                self.afc_stats.average_tool_load_time.average_time(load_time)/                # self.afc_stats.average_tool_load_time.average_time(load_time)/' ~/klipper/klippy/extras/AFC.py
+sed -i 's/            self.afc_stats.average_tool_unload_time.average_time(unload_time)/            # self.afc_stats.average_tool_unload_time.average_time(unload_time)/' ~/klipper/klippy/extras/AFC.py
+sed -i 's/                self.afc_stats.average_toolchange_time.average_time(total_time)/                # self.afc_stats.average_toolchange_time.average_time(total_time)/' ~/klipper/klippy/extras/AFC.py
+grep -n "afc_stats.average" ~/klipper/klippy/extras/AFC.py
+sudo systemctl restart klipper
+sed -n '2233,2240p' ~/klipper/klippy/extras/AFC.py
+sed -i 's/                self.afc_stats.average_tool_load_time.reset_count()/                # self.afc_stats.average_tool_load_time.reset_count()/' ~/klipper/klippy/extras/AFC.py
+sed -i 's/                self.afc_stats.reset_average_times()/                # self.afc_stats.reset_average_times()/' ~/klipper/klippy/extras/AFC.py
+grep -n "afc_stats" ~/klipper/klippy/extras/AFC.py
+sed -n '1918,1922p' ~/klipper/klippy/extras/AFC.py
+sed -n '2156,2160p' ~/klipper/klippy/extras/AFC.py
+grep -n "afc_stats" ~/klipper/klippy/extras/AFC.py
+sudo reboot

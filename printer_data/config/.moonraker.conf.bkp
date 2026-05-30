@@ -5,7 +5,6 @@ klippy_uds_address = /home/andre/printer_data/comms/klippy.sock
 
 [authorization]
 trusted_clients = 
-	192.168.0.0/16
 	10.0.0.0/8
 	127.0.0.0/8
 	169.254.0.0/16
@@ -34,6 +33,14 @@ enable_object_processing = True
 [update_manager]
 channel = dev
 refresh_interval = 168
+
+[update_manager mainsail]
+path = /home/andre/mainsail
+repo = mainsail-crew/mainsail
+channel = stable
+type = web
+persistent_files = 
+	config.json
 
 [update_manager mainsail-config]
 managed_services = klipper
@@ -91,6 +98,23 @@ origin = https://github.com/Clon1998/mobileraker_companion.git
 path = /home/andre/mobileraker_companion
 type = git_repo
 
+[update_manager backup_pie]
+type = git_repo
+path = /home/andre/Backup-Pie
+origin = https://github.com/AMOVFC/Backup-Pie.git
+primary_branch = main
+is_system_service = false
+
+[update_manager afc-software]
+type = git_repo
+path = ~/AFC-Klipper-Add-On
+origin = https://github.com/AFCProject/AFC-Klipper-Add-On.git
+managed_services = klipper
+primary_branch = main
+is_system_service = False
+info_tags = 
+	desc=AFC Klipper Add On
+
 [update_manager octoeverywhere]
 type = git_repo
 channel = beta
@@ -106,48 +130,3 @@ managed_services =
 subscriptions = 
 	octoeverywhere
 
-[update_manager klipper-backup]
-type = git_repo
-path = ~/klipper-backup
-origin = https://github.com/Staubgeborener/klipper-backup.git
-managed_services = moonraker
-primary_branch = main
-
-[mqtt]
-address = 127.0.0.1
-port = 1883
-
-[sensor chamber_env]
-type = mqtt
-name = Chamber Env
-parameter_temperature = 
-	units=C
-parameter_humidity = 
-	units=%
-parameter_voc_index = 
-	units=PPCM
-state_topic = printer/air_monitor/state
-state_response_template = 
-	{% set d = payload|fromjson %}
-	{set_result("temperature", d["temperature"]|float)}
-	{set_result("humidity", d["humidity"]|float)}
-	{set_result("voc_index", d["voc_index"]|float)}
-
-[update_manager mainsail]
-path = /home/andre/mainsail
-repo = mainsail-crew/mainsail
-channel = stable
-type = web
-persistent_files = 
-	config.json
-
-<<<<<<< HEAD
-[update_manager backup_pie]
-type = git_repo
-path = /home/andre/Backup-Pie
-origin = https://github.com/AMOVFC/Backup-Pie.git
-primary_branch = main
-is_system_service = False
-
-=======
->>>>>>> origin/main

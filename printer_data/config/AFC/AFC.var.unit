@@ -6,7 +6,7 @@
             "hub": "HTLF_1",
             "extruder": "extruder",
             "buffer": "TN",
-            "buffer_status": "Advancing",
+            "buffer_status": "Unknown",
             "lane": 1,
             "map": "T1",
             "load": true,
@@ -26,7 +26,7 @@
             "filament_status": "Ready",
             "filament_status_led": "#00cc00",
             "status": "Loaded",
-            "dist_hub": 140.0,
+            "dist_hub": 86.83,
             "td1_data": {}
         },
         "lane2": {
@@ -35,7 +35,7 @@
             "hub": "HTLF_1",
             "extruder": "extruder",
             "buffer": "TN",
-            "buffer_status": "Advancing",
+            "buffer_status": "Unknown",
             "lane": 2,
             "map": "T2",
             "load": false,
@@ -55,7 +55,7 @@
             "filament_status": "Not Ready",
             "filament_status_led": "#ff0000",
             "status": "None",
-            "dist_hub": 130.0,
+            "dist_hub": 100.0,
             "td1_data": {}
         },
         "lane3": {
@@ -64,7 +64,7 @@
             "hub": "HTLF_1",
             "extruder": "extruder",
             "buffer": "TN",
-            "buffer_status": "Advancing",
+            "buffer_status": "Unknown",
             "lane": 3,
             "map": "T3",
             "load": false,
@@ -84,7 +84,7 @@
             "filament_status": "Not Ready",
             "filament_status_led": "#ff0000",
             "status": "None",
-            "dist_hub": 130.0,
+            "dist_hub": 86.36,
             "td1_data": {}
         },
         "lane4": {
@@ -93,7 +93,7 @@
             "hub": "HTLF_1",
             "extruder": "extruder",
             "buffer": "TN",
-            "buffer_status": "Advancing",
+            "buffer_status": "Unknown",
             "lane": 4,
             "map": "T4",
             "load": false,
@@ -113,7 +113,7 @@
             "filament_status": "Not Ready",
             "filament_status_led": "#ff0000",
             "status": "None",
-            "dist_hub": 140.0,
+            "dist_hub": 110.0,
             "td1_data": {}
         }
     },

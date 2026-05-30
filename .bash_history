@@ -772,3 +772,14 @@ ls
 cd ../
 ls
 ls dev/serial/by-id/**
+cd ~/AFC-Klipper-Add-On
+git pull
+./install.sh
+ls
+install-afc.sh
+./install-afc.sh
+cd
+ls
+cd kiauh
+ls
+./kiauh.sh

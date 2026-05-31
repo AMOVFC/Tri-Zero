@@ -3,6 +3,10 @@ host = 0.0.0.0
 port = 7125
 klippy_uds_address = /home/andre/printer_data/comms/klippy.sock
 
+[spoolman]
+server = http://192.168.4.45:7912
+sync_rate = 5
+
 [authorization]
 trusted_clients = 
 	10.0.0.0/8

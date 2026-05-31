@@ -1,0 +1,1418 @@
+2026-05-30 23:31:50:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
+2026-05-30 23:31:50:INFO:Using data directory: /home/andre/.local/share/spoolman
+2026-05-30 23:31:50:INFO:Using logs directory: /home/andre/.local/share/spoolman
+2026-05-30 23:31:50:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
+2026-05-30 23:31:50:INFO:Setting up database...
+2026-05-30 23:31:50:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
+2026-05-30 23:31:50:INFO:Performing migrations...
+2026-05-30 23:31:52:INFO:Scheduling automatic database backup for midnight.
+2026-05-30 23:31:52:INFO:Scheduling external DB sync.
+2026-05-30 23:31:52:INFO:Startup complete.
+2026-05-30 23:31:52:INFO:Application startup complete.
+2026-05-30 23:31:52:INFO:Syncing external DB.
+2026-05-30 23:31:52:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
+2026-05-30 23:31:57:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(0)], <function _sync at 0xf500b2a8>, (), {}, 1, True, datetime.datetime(2026, 5, 30, 23, 31, 52, 286298), None, False, None, None)`!
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
+    await coroutine
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
+    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
+    response = await client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 212, in handle_async_request
+    regular_response = await self._transport.handle_async_request(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+2026-05-30 23:32:15:INFO:192.168.4.45:34796 - "WebSocket /api/v1/spool" [accepted]
+2026-05-30 23:32:15:INFO:Client 192.168.4.45 is now listening on pool spool
+2026-05-30 23:32:15:INFO:connection open
+2026-05-30 23:32:16:INFO:192.168.4.45:34810 - "GET /api/v1/info HTTP/1.1" 200
+2026-05-30 23:32:16:INFO:192.168.4.45:34820 - "GET /api/v1/health HTTP/1.1" 200
+2026-05-30 23:32:16:INFO:192.168.4.45:34822 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-05-30 23:32:16:INFO:192.168.4.45:34828 - "GET /api/v1/spool HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:56180 - "GET / HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:56180 - "GET /config.js HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:65090 - "GET /assets/index-B6snAd4S.css HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:56777 - "GET /registerSW.js HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:64163 - "GET /assets/index-CfEY3xBo.js HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:54762 - "GET /manifest.webmanifest HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:64163 - "GET /locales/pt/common.json HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:56777 - "GET /locales/en/common.json HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:64163 - "GET /favicon.ico HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:56777 - "GET /assets/pt-Bw_mJDwt.js HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:56777 - "GET /kofi_s_logo_nolabel.png HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:64163 - "GET /assets/utc-CiXfA8Ex.js HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:56180 - "GET /api/v1/info HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:65090 - "GET /assets/Trans-BOUcemzd.js HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:56777 - "GET /assets/index-Cnn4gLNO.js HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:65090 - "GET /assets/pt_PT-bcwGpRcx.js HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:65090 - "GET /favicon.svg HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:65090 - "GET /api/v1/info HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:65090 - "GET /api/v1/spool?limit=1&offset=0 HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:56777 - "GET /api/v1/filament?limit=1&offset=0 HTTP/1.1" 200
+2026-05-30 23:32:25:INFO:192.168.4.31:56180 - "GET /api/v1/vendor?limit=1&offset=0 HTTP/1.1" 200
+2026-05-30 23:32:34:INFO:192.168.4.31:59857 - "GET /assets/en-eqSoIGmz.js HTTP/1.1" 200
+2026-05-30 23:32:34:INFO:192.168.4.31:59857 - "GET /api/v1/info HTTP/1.1" 200
+2026-05-30 23:32:34:INFO:192.168.4.31:59857 - "GET /assets/en_GB-CGHtCdyj.js HTTP/1.1" 200
+2026-05-30 23:32:34:INFO:192.168.4.31:59857 - "GET /api/v1/info HTTP/1.1" 200
+2026-05-30 23:32:41:INFO:192.168.4.31:59882 - "GET /assets/list-Dj3K7C16.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:50477 - "GET /assets/filtering-CY1b-XQk.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:53796 - "GET /assets/numberField-RnSuwYlt.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:55475 - "GET /assets/parsing-BKQBUCNT.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:59882 - "GET /assets/spoolIcon-CaFR4IZq.css HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:57468 - "GET /assets/column-D-H8r9IW.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:58746 - "GET /assets/queryFields-D3DLNFIc.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:53796 - "GET /assets/liveify-DeREFN3w.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:59882 - "GET /assets/saveload-1X65M_tW.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:50477 - "GET /assets/spoolIcon-DKd3URMe.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:55475 - "GET /assets/otherModels-DxpInbX8.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:58746 - "GET /assets/settings-BS0ciFWM.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:57468 - "GET /assets/querySettings-JNLWWCMn.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:59882 - "GET /assets/Tree-C7Uj20Jj.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:55475 - "GET /assets/SearchOutlined-Nbrd2qqC.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:53796 - "GET /assets/Table-CkbZfj_F.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:50477 - "GET /assets/index-jrOLYYpA.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:57468 - "GET /assets/useBubbleLock-Coz9GRmL.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:58746 - "GET /assets/index-CPw7TJxs.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:59882 - "GET /assets/index-BV2BMTs1.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:55475 - "GET /assets/Pagination-DVl6sdfP.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:50477 - "GET /assets/EyeOutlined-BD-WWWS0.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:58746 - "GET /assets/Pagination-ByQUWoiv.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:57468 - "GET /assets/zh_CN-cwSELhhy.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:53796 - "GET /assets/Input-zQ5Cb-kl.js HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:56420 - "WebSocket /api/v1/filament" [accepted]
+2026-05-30 23:32:42:INFO:Client 192.168.4.31 is now listening on pool filament
+2026-05-30 23:32:42:INFO:connection open
+2026-05-30 23:32:42:INFO:192.168.4.31:58746 - "GET /api/v1/setting/round_prices HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:57468 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:53796 - "GET /api/v1/field/filament HTTP/1.1" 200
+2026-05-30 23:32:42:INFO:192.168.4.31:50477 - "GET /api/v1/filament?limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:Client 192.168.4.31 has stopped listening on pool filament
+2026-05-30 23:32:45:INFO:connection closed
+2026-05-30 23:32:45:INFO:192.168.4.31:50477 - "GET /assets/create-BL2P_R0x.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:53796 - "GET /assets/extraFields-C8fjbzRp.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:58746 - "GET /assets/index-lEhcvfBN.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:55475 - "GET /assets/index-Ddwq3Gut.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:57468 - "GET /assets/inputNumberRange-DOoA0VwH.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:59882 - "GET /assets/functions-INiTNdyT.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:50477 - "GET /assets/multiColorPicker-DK9nfSmk.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:58746 - "GET /assets/index-D9jGKtr8.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:55475 - "GET /assets/Slider-DwVi45WC.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:53796 - "GET /assets/index-JjIIiIWA.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:59882 - "GET /assets/index-BR3MEuB0.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:57468 - "GET /assets/functions-C5LMHYJi.js HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:59882 - "GET /api/v1/field/filament HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:57468 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-30 23:32:45:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-30 23:32:45:INFO:192.168.4.31:53796 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-30 23:32:45:INFO:192.168.4.31:55475 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-05-30 23:32:46:INFO:192.168.4.31:55475 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-30 23:32:46:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-30 23:32:48:INFO:192.168.4.31:53796 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-30 23:32:48:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-30 23:32:50:INFO:192.168.4.31:59882 - "GET /assets/list-BHy968e8.js HTTP/1.1" 200
+2026-05-30 23:32:50:INFO:192.168.4.31:59882 - "GET /api/v1/field/vendor HTTP/1.1" 200
+2026-05-30 23:32:50:INFO:192.168.4.31:49958 - "WebSocket /api/v1/vendor" [accepted]
+2026-05-30 23:32:50:INFO:Client 192.168.4.31 is now listening on pool vendor
+2026-05-30 23:32:50:INFO:connection open
+2026-05-30 23:32:50:INFO:192.168.4.31:59882 - "GET /api/v1/vendor?limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-30 23:32:51:INFO:Client 192.168.4.31 has stopped listening on pool vendor
+2026-05-30 23:32:51:INFO:connection closed
+2026-05-30 23:32:51:INFO:192.168.4.31:59882 - "GET /api/v1/field/filament HTTP/1.1" 200
+2026-05-30 23:32:51:INFO:192.168.4.31:61108 - "WebSocket /api/v1/filament" [accepted]
+2026-05-30 23:32:51:INFO:Client 192.168.4.31 is now listening on pool filament
+2026-05-30 23:32:51:INFO:connection open
+2026-05-30 23:32:51:INFO:192.168.4.31:59786 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-30 23:32:51:INFO:192.168.4.31:59882 - "GET /api/v1/setting/round_prices HTTP/1.1" 200
+2026-05-30 23:32:51:INFO:192.168.4.31:56289 - "GET /api/v1/filament?limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-30 23:32:52:INFO:Client 192.168.4.31 has stopped listening on pool filament
+2026-05-30 23:32:52:INFO:connection closed
+2026-05-30 23:32:52:INFO:192.168.4.31:59786 - "GET /assets/PrinterOutlined-BjRKt-Mx.js HTTP/1.1" 200
+2026-05-30 23:32:52:INFO:192.168.4.31:59882 - "GET /assets/ToTopOutlined-DjQhu_H9.js HTTP/1.1" 200
+2026-05-30 23:32:52:INFO:192.168.4.31:56289 - "GET /assets/list-BhDXlc1k.js HTTP/1.1" 200
+2026-05-30 23:32:52:INFO:192.168.4.31:56289 - "GET /api/v1/field/spool HTTP/1.1" 200
+2026-05-30 23:32:52:INFO:192.168.4.31:60076 - "WebSocket /api/v1/spool" [accepted]
+2026-05-30 23:32:52:INFO:Client 192.168.4.31 is now listening on pool spool
+2026-05-30 23:32:52:INFO:connection open
+2026-05-30 23:32:52:INFO:192.168.4.31:59882 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-30 23:32:52:INFO:192.168.4.31:56289 - "GET /api/v1/setting/round_prices HTTP/1.1" 200
+2026-05-30 23:32:52:INFO:192.168.4.31:59786 - "GET /api/v1/spool?allow_archived=false&limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-30 23:32:53:INFO:Client 192.168.4.31 has stopped listening on pool spool
+2026-05-30 23:32:53:INFO:connection closed
+2026-05-30 23:32:53:INFO:192.168.4.31:56289 - "GET /assets/functions-CXWu0ZgF.js HTTP/1.1" 200
+2026-05-30 23:32:53:INFO:192.168.4.31:59882 - "GET /assets/index-qcFx7Sv4.css HTTP/1.1" 200
+2026-05-30 23:32:53:INFO:192.168.4.31:59786 - "GET /assets/index-BwG-O2r8.js HTTP/1.1" 200
+2026-05-30 23:32:53:INFO:192.168.4.31:59882 - "GET /api/v1/setting/locations_spoolorders HTTP/1.1" 200
+2026-05-30 23:32:53:INFO:192.168.4.31:59786 - "GET /api/v1/setting/locations HTTP/1.1" 200
+2026-05-30 23:32:53:INFO:192.168.4.31:56289 - "GET /api/v1/spool?allow_archived=false HTTP/1.1" 200
+2026-05-30 23:32:54:INFO:192.168.4.31:56289 - "GET /assets/index-DIYe1l_t.js HTTP/1.1" 200
+2026-05-30 23:32:54:INFO:192.168.4.31:59786 - "GET /assets/extraFieldsSettings-Dp2pD7zU.js HTTP/1.1" 200
+2026-05-30 23:32:54:INFO:192.168.4.31:59882 - "GET /assets/index-CnAJ0kCl.js HTTP/1.1" 200
+2026-05-30 23:32:54:INFO:192.168.4.31:61647 - "GET /assets/generalSettings-DykCdP3r.js HTTP/1.1" 200
+2026-05-30 23:32:54:INFO:192.168.4.31:61647 - "GET /api/v1/setting/ HTTP/1.1" 200
+2026-05-30 23:33:27:INFO:Setting "currency" has been set to ""USD"".
+2026-05-30 23:33:27:INFO:192.168.4.31:56234 - "POST /api/v1/setting/currency HTTP/1.1" 200
+2026-05-30 23:33:34:INFO:192.168.4.31:54144 - "GET /api/v1/vendor?limit=1&offset=0 HTTP/1.1" 200
+2026-05-30 23:33:34:INFO:192.168.4.31:57911 - "GET /api/v1/filament?limit=1&offset=0 HTTP/1.1" 200
+2026-05-30 23:33:34:INFO:192.168.4.31:57539 - "GET /api/v1/spool?limit=1&offset=0 HTTP/1.1" 200
+2026-05-30 23:33:36:INFO:192.168.4.31:57911 - "GET /api/v1/field/filament HTTP/1.1" 200
+2026-05-30 23:33:36:INFO:192.168.4.31:57539 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-30 23:33:36:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-30 23:33:36:INFO:192.168.4.31:54144 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-30 23:33:36:INFO:192.168.4.31:61628 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-05-30 23:33:37:INFO:192.168.4.31:61628 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-30 23:33:37:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-30 23:33:39:INFO:192.168.4.31:54144 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-30 23:33:39:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-30 23:33:43:INFO:192.168.4.31:56071 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-30 23:33:43:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-30 23:33:55:INFO:192.168.4.31:52202 - "GET /api/v1/vendor?name=S HTTP/1.1" 200
+2026-05-30 23:33:56:INFO:192.168.4.31:52202 - "GET /api/v1/vendor?name=Sunlu HTTP/1.1" 200
+2026-05-30 23:33:58:INFO:192.168.4.31:52202 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-05-30 23:34:28:INFO:192.168.4.31:52042 - "GET /api/v1/vendor?name=Sunlu HTTP/1.1" 200
+2026-05-30 23:34:30:INFO:192.168.4.31:52042 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-05-30 23:35:27:INFO:192.168.4.31:62358 - "POST /api/v1/filament HTTP/1.1" 200
+2026-05-30 23:35:27:INFO:192.168.4.31:62358 - "GET /api/v1/field/filament HTTP/1.1" 200
+2026-05-30 23:35:27:INFO:192.168.4.31:63539 - "WebSocket /api/v1/filament" [accepted]
+2026-05-30 23:35:27:INFO:Client 192.168.4.31 is now listening on pool filament
+2026-05-30 23:35:27:INFO:connection open
+2026-05-30 23:35:27:INFO:192.168.4.31:62397 - "GET /api/v1/setting/round_prices HTTP/1.1" 200
+2026-05-30 23:35:27:INFO:192.168.4.31:57479 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-30 23:35:27:INFO:192.168.4.31:65199 - "GET /api/v1/filament?limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-30 23:35:27:INFO:192.168.4.31:50608 - "WebSocket /api/v1/filament/1" [accepted]
+2026-05-30 23:35:27:INFO:Client 192.168.4.31 is now listening on pool filament,1
+2026-05-30 23:35:27:INFO:connection open
+2026-05-30 23:36:06:INFO:Client 192.168.4.31 has stopped listening on pool filament
+2026-05-30 23:36:06:INFO:connection closed
+2026-05-30 23:36:06:INFO:Client 192.168.4.31 has stopped listening on pool filament,1
+2026-05-30 23:36:06:INFO:connection closed
+2026-05-30 23:36:06:INFO:192.168.4.31:51163 - "WebSocket /api/v1/spool" [accepted]
+2026-05-30 23:36:06:INFO:Client 192.168.4.31 is now listening on pool spool
+2026-05-30 23:36:06:INFO:192.168.4.31:61069 - "GET /api/v1/field/spool HTTP/1.1" 200
+2026-05-30 23:36:06:INFO:connection open
+2026-05-30 23:36:06:INFO:192.168.4.31:61069 - "GET /api/v1/setting/round_prices HTTP/1.1" 200
+2026-05-30 23:36:06:INFO:192.168.4.31:64136 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-30 23:36:06:INFO:192.168.4.31:54040 - "GET /api/v1/spool?allow_archived=false&limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-30 23:36:09:INFO:Client 192.168.4.31 has stopped listening on pool spool
+2026-05-30 23:36:09:INFO:connection closed
+2026-05-30 23:36:09:INFO:192.168.4.31:54040 - "GET /assets/create-BpKDh6tb.js HTTP/1.1" 200
+2026-05-30 23:36:09:INFO:192.168.4.31:64136 - "GET /assets/functions-Cy9aPGV_.js HTTP/1.1" 200
+2026-05-30 23:36:09:INFO:192.168.4.31:61069 - "GET /assets/model-CZ_KvoQu.js HTTP/1.1" 200
+2026-05-30 23:36:09:INFO:192.168.4.31:57496 - "GET /assets/create-BIjmORAJ.css HTTP/1.1" 200
+2026-05-30 23:36:09:INFO:192.168.4.31:54838 - "GET /assets/index-Bf0XvWBJ.js HTTP/1.1" 200
+2026-05-30 23:36:09:INFO:192.168.4.31:54838 - "GET /api/v1/field/spool HTTP/1.1" 200
+2026-05-30 23:36:09:INFO:192.168.4.31:54040 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-30 23:36:09:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-30 23:36:09:INFO:192.168.4.31:56981 - "GET /api/v1/setting/locations HTTP/1.1" 200
+2026-05-30 23:36:09:INFO:192.168.4.31:57496 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-30 23:36:09:INFO:192.168.4.31:64136 - "GET /api/v1/location HTTP/1.1" 200
+2026-05-30 23:36:09:INFO:192.168.4.31:61069 - "GET /api/v1/filament HTTP/1.1" 200
+2026-05-30 23:36:10:INFO:192.168.4.31:61069 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-30 23:36:10:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-30 23:36:12:INFO:192.168.4.31:64136 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-30 23:36:12:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-30 23:36:16:INFO:192.168.4.31:54027 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-30 23:36:16:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-30 23:36:32:INFO:192.168.4.31:49267 - "GET /api/v1/field/spool HTTP/1.1" 200
+2026-05-30 23:36:32:INFO:192.168.4.31:63564 - "WebSocket /api/v1/spool" [accepted]
+2026-05-30 23:36:32:INFO:Client 192.168.4.31 is now listening on pool spool
+2026-05-30 23:36:32:INFO:connection open
+2026-05-30 23:36:32:INFO:192.168.4.31:59102 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-30 23:36:32:INFO:192.168.4.31:51749 - "GET /api/v1/setting/round_prices HTTP/1.1" 200
+2026-05-30 23:36:32:INFO:192.168.4.31:49267 - "GET /api/v1/spool?allow_archived=false&limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-30 23:46:16:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
+2026-05-30 23:46:16:INFO:Using data directory: /home/andre/.local/share/spoolman
+2026-05-30 23:46:16:INFO:Using logs directory: /home/andre/.local/share/spoolman
+2026-05-30 23:46:16:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
+2026-05-30 23:46:16:INFO:Setting up database...
+2026-05-30 23:46:16:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
+2026-05-30 23:46:16:INFO:Performing migrations...
+2026-05-30 23:46:17:INFO:Scheduling automatic database backup for midnight.
+2026-05-30 23:46:17:INFO:Scheduling external DB sync.
+2026-05-30 23:46:17:INFO:Startup complete.
+2026-05-30 23:46:17:INFO:Application startup complete.
+2026-05-30 23:46:17:INFO:Syncing external DB.
+2026-05-30 23:46:17:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
+2026-05-30 23:46:17:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(0)], <function _sync at 0xf531c988>, (), {}, 1, True, datetime.datetime(2026, 5, 30, 23, 46, 17, 216354), None, False, None, None)`!
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
+    await coroutine
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
+    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
+    response = await client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 212, in handle_async_request
+    regular_response = await self._transport.handle_async_request(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno -3] Temporary failure in name resolution
+2026-05-30 23:46:29:INFO:192.168.4.45:44856 - "WebSocket /api/v1/spool" [accepted]
+2026-05-30 23:46:29:INFO:Client 192.168.4.45 is now listening on pool spool
+2026-05-30 23:46:29:INFO:connection open

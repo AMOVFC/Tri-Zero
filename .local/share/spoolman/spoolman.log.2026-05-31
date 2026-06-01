@@ -1,0 +1,984 @@
+2026-05-31 13:25:06:INFO:192.168.4.45:53860 - "GET /api/v1/info HTTP/1.1" 200
+2026-05-31 13:25:06:INFO:192.168.4.45:53864 - "GET /api/v1/health HTTP/1.1" 200
+2026-05-31 13:25:06:INFO:192.168.4.45:53866 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-05-31 13:25:06:INFO:192.168.4.45:53876 - "GET /api/v1/spool HTTP/1.1" 200
+2026-05-31 13:37:49:INFO:Performing scheduled database backup.
+2026-05-31 13:37:49:INFO:Backing up SQLite database to /home/andre/.local/share/spoolman/backups/spoolman.db
+2026-05-31 13:37:49:INFO:Copied 1 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 2 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 3 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 4 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 5 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 6 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 7 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 8 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 9 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 10 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 11 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 12 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 13 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 14 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 15 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 16 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 17 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 18 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 19 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 20 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 21 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 22 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 23 of 24 pages.
+2026-05-31 13:37:49:INFO:Copied 24 of 24 pages.
+2026-05-31 13:37:49:INFO:Backup complete.
+2026-05-31 13:38:43:INFO:192.168.4.45:56520 - "GET /api/v1/info HTTP/1.1" 200
+2026-05-31 13:38:43:INFO:192.168.4.45:56530 - "GET /api/v1/health HTTP/1.1" 200
+2026-05-31 13:38:43:INFO:192.168.4.45:56534 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-05-31 13:38:43:INFO:192.168.4.45:56546 - "GET /api/v1/spool HTTP/1.1" 200
+2026-05-31 13:38:43:INFO:192.168.4.31:50796 - "GET /spool HTTP/1.1" 200
+2026-05-31 13:38:43:INFO:192.168.4.31:50796 - "GET /config.js HTTP/1.1" 200
+2026-05-31 13:38:44:INFO:192.168.4.31:50796 - "GET /api/v1/info HTTP/1.1" 200
+2026-05-31 13:38:44:INFO:192.168.4.31:50796 - "GET /api/v1/info HTTP/1.1" 200
+2026-05-31 13:38:44:INFO:192.168.4.31:63846 - "WebSocket /api/v1/spool" [accepted]
+2026-05-31 13:38:44:INFO:Client 192.168.4.31 is now listening on pool spool
+2026-05-31 13:38:44:INFO:connection open
+2026-05-31 13:38:44:INFO:192.168.4.31:50796 - "GET /api/v1/field/spool HTTP/1.1" 200
+2026-05-31 13:38:44:INFO:192.168.4.31:57541 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-31 13:38:44:INFO:192.168.4.31:56938 - "GET /api/v1/setting/round_prices HTTP/1.1" 200
+2026-05-31 13:38:44:INFO:192.168.4.31:59181 - "GET /api/v1/spool?allow_archived=false&limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-31 13:38:46:INFO:Client 192.168.4.31 has stopped listening on pool spool
+2026-05-31 13:38:46:INFO:connection closed
+2026-05-31 13:38:46:INFO:192.168.4.31:62534 - "WebSocket /api/v1/filament" [accepted]
+2026-05-31 13:38:46:INFO:Client 192.168.4.31 is now listening on pool filament
+2026-05-31 13:38:46:INFO:connection open
+2026-05-31 13:38:46:INFO:192.168.4.31:59181 - "GET /api/v1/field/filament HTTP/1.1" 200
+2026-05-31 13:38:46:INFO:192.168.4.31:57541 - "GET /api/v1/setting/round_prices HTTP/1.1" 200
+2026-05-31 13:38:46:INFO:192.168.4.31:56938 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-31 13:38:46:INFO:192.168.4.31:50796 - "GET /api/v1/filament?limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-31 13:38:46:INFO:192.168.4.31:58711 - "WebSocket /api/v1/filament/1" [accepted]
+2026-05-31 13:38:46:INFO:Client 192.168.4.31 is now listening on pool filament,1
+2026-05-31 13:38:46:INFO:connection open
+2026-05-31 13:38:51:INFO:Client 192.168.4.31 has stopped listening on pool filament
+2026-05-31 13:38:51:INFO:connection closed
+2026-05-31 13:38:51:INFO:Client 192.168.4.31 has stopped listening on pool filament,1
+2026-05-31 13:38:51:INFO:connection closed
+2026-05-31 13:38:51:INFO:192.168.4.31:54186 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-31 13:38:51:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-31 13:38:51:INFO:192.168.4.31:65160 - "GET /api/v1/field/filament HTTP/1.1" 200
+2026-05-31 13:38:51:INFO:192.168.4.31:53693 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-31 13:38:51:INFO:192.168.4.31:52404 - "GET /api/v1/filament/1 HTTP/1.1" 200
+2026-05-31 13:38:51:INFO:192.168.4.31:63967 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-05-31 13:38:52:INFO:192.168.4.31:63967 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-31 13:38:52:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-31 13:38:54:INFO:192.168.4.31:52404 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-31 13:38:54:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-31 13:38:58:INFO:192.168.4.31:59820 - "GET /api/v1/external/filament HTTP/1.1" 500
+2026-05-31 13:38:58:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 349, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/andre/.local/share/spoolman/cache/filaments.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 462, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 102, in app
+    await response(scope, receive, send)
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/starlette/responses.py", line 352, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/andre/.local/share/spoolman/cache/filaments.json does not exist.
+2026-05-31 13:39:02:INFO:192.168.4.31:54843 - "GET /api/v1/vendor?name=Sunlu HTTP/1.1" 200
+2026-05-31 13:39:03:INFO:192.168.4.31:54843 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-05-31 13:39:11:INFO:192.168.4.31:59023 - "POST /api/v1/filament HTTP/1.1" 200
+2026-05-31 13:39:12:INFO:192.168.4.31:59023 - "GET /api/v1/field/filament HTTP/1.1" 200
+2026-05-31 13:39:12:INFO:192.168.4.31:55151 - "WebSocket /api/v1/filament" [accepted]
+2026-05-31 13:39:12:INFO:Client 192.168.4.31 is now listening on pool filament
+2026-05-31 13:39:12:INFO:connection open
+2026-05-31 13:39:12:INFO:192.168.4.31:52868 - "GET /api/v1/setting/currency HTTP/1.1" 200
+2026-05-31 13:39:12:INFO:192.168.4.31:64840 - "GET /api/v1/setting/round_prices HTTP/1.1" 200
+2026-05-31 13:39:12:INFO:192.168.4.31:62279 - "GET /api/v1/filament?limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-31 13:39:12:INFO:192.168.4.31:61242 - "WebSocket /api/v1/filament/1" [accepted]
+2026-05-31 13:39:12:INFO:Client 192.168.4.31 is now listening on pool filament,1
+2026-05-31 13:39:12:INFO:connection open
+2026-05-31 13:39:12:INFO:192.168.4.31:62937 - "WebSocket /api/v1/filament/1" [accepted]
+2026-05-31 13:39:12:INFO:Client 192.168.4.31 is now listening on pool filament,1
+2026-05-31 13:39:12:INFO:connection open
+2026-05-31 13:39:12:INFO:connection closed
+2026-05-31 13:39:12:INFO:192.168.4.31:49353 - "WebSocket /api/v1/filament/2" [accepted]
+2026-05-31 13:39:12:INFO:Client 192.168.4.31 is now listening on pool filament,2
+2026-05-31 13:39:12:INFO:connection open
+2026-05-31 13:39:12:INFO:Client 192.168.4.31 has stopped listening on pool filament,1
+2026-05-31 13:40:15:INFO:Client 192.168.4.31 has stopped listening on pool filament
+2026-05-31 13:40:15:INFO:connection closed
+2026-05-31 13:40:15:INFO:Client 192.168.4.31 has stopped listening on pool filament,1
+2026-05-31 13:40:15:INFO:connection closed
+2026-05-31 13:40:15:INFO:Client 192.168.4.31 has stopped listening on pool filament,2
+2026-05-31 13:40:15:INFO:connection closed
+2026-05-31 13:40:15:INFO:192.168.4.31:62409 - "WebSocket /api/v1/vendor" [accepted]
+2026-05-31 13:40:15:INFO:Client 192.168.4.31 is now listening on pool vendor
+2026-05-31 13:40:15:INFO:connection open
+2026-05-31 13:40:15:INFO:192.168.4.31:54166 - "GET /api/v1/field/vendor HTTP/1.1" 200
+2026-05-31 13:40:15:INFO:192.168.4.31:54166 - "GET /api/v1/vendor?limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-31 13:40:18:INFO:Client 192.168.4.31 has stopped listening on pool vendor
+2026-05-31 13:40:18:INFO:connection closed
+2026-05-31 13:40:18:INFO:192.168.4.31:54166 - "GET /assets/create-DgSMHZaM.js HTTP/1.1" 200
+2026-05-31 13:40:18:INFO:192.168.4.31:54166 - "GET /api/v1/field/vendor HTTP/1.1" 200
+2026-05-31 13:40:25:INFO:192.168.4.31:59006 - "POST /api/v1/vendor HTTP/1.1" 200
+2026-05-31 13:40:25:INFO:192.168.4.31:59006 - "GET /api/v1/field/vendor HTTP/1.1" 200
+2026-05-31 13:40:25:INFO:192.168.4.31:56049 - "WebSocket /api/v1/vendor" [accepted]
+2026-05-31 13:40:25:INFO:Client 192.168.4.31 is now listening on pool vendor
+2026-05-31 13:40:25:INFO:connection open
+2026-05-31 13:40:25:INFO:192.168.4.31:61651 - "GET /api/v1/vendor?limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-31 13:40:25:INFO:192.168.4.31:56321 - "WebSocket /api/v1/vendor/1" [accepted]
+2026-05-31 13:40:25:INFO:Client 192.168.4.31 is now listening on pool vendor,1
+2026-05-31 13:40:25:INFO:connection open
+2026-05-31 13:40:27:INFO:Client 192.168.4.31 has stopped listening on pool vendor
+2026-05-31 13:40:27:INFO:connection closed
+2026-05-31 13:40:27:INFO:Client 192.168.4.31 has stopped listening on pool vendor,1
+2026-05-31 13:40:27:INFO:connection closed
+2026-05-31 13:40:27:INFO:192.168.4.31:61651 - "GET /api/v1/field/vendor HTTP/1.1" 200
+2026-05-31 13:40:36:INFO:192.168.4.31:59997 - "POST /api/v1/vendor HTTP/1.1" 200
+2026-05-31 13:40:36:INFO:192.168.4.31:59997 - "GET /api/v1/field/vendor HTTP/1.1" 200
+2026-05-31 13:40:36:INFO:192.168.4.31:58062 - "WebSocket /api/v1/vendor" [accepted]
+2026-05-31 13:40:36:INFO:Client 192.168.4.31 is now listening on pool vendor
+2026-05-31 13:40:36:INFO:connection open
+2026-05-31 13:40:36:INFO:192.168.4.31:55503 - "GET /api/v1/vendor?limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-31 13:40:36:INFO:192.168.4.31:57674 - "WebSocket /api/v1/vendor/1" [accepted]
+2026-05-31 13:40:36:INFO:Client 192.168.4.31 is now listening on pool vendor,1
+2026-05-31 13:40:36:INFO:connection open
+2026-05-31 13:40:36:INFO:connection closed
+2026-05-31 13:40:36:INFO:192.168.4.31:55768 - "WebSocket /api/v1/vendor/1" [accepted]
+2026-05-31 13:40:36:INFO:Client 192.168.4.31 is now listening on pool vendor,1
+2026-05-31 13:40:36:INFO:connection open
+2026-05-31 13:40:36:INFO:192.168.4.31:59062 - "WebSocket /api/v1/vendor/2" [accepted]
+2026-05-31 13:40:36:INFO:Client 192.168.4.31 is now listening on pool vendor,2
+2026-05-31 13:40:36:INFO:connection open
+2026-05-31 13:40:36:INFO:Client 192.168.4.31 has stopped listening on pool vendor,1
+2026-05-31 13:40:37:INFO:Client 192.168.4.31 has stopped listening on pool vendor,1
+2026-05-31 13:40:37:INFO:connection closed
+2026-05-31 13:40:37:INFO:Client 192.168.4.31 has stopped listening on pool vendor
+2026-05-31 13:40:37:INFO:connection closed
+2026-05-31 13:40:37:INFO:Client 192.168.4.31 has stopped listening on pool vendor,2
+2026-05-31 13:40:37:INFO:connection closed
+2026-05-31 13:40:37:INFO:192.168.4.31:55503 - "GET /api/v1/field/vendor HTTP/1.1" 200
+2026-05-31 13:41:38:INFO:192.168.4.31:56320 - "POST /api/v1/vendor HTTP/1.1" 200
+2026-05-31 13:41:38:INFO:192.168.4.31:56320 - "GET /api/v1/field/vendor HTTP/1.1" 200
+2026-05-31 13:41:38:INFO:192.168.4.31:50811 - "WebSocket /api/v1/vendor" [accepted]
+2026-05-31 13:41:38:INFO:Client 192.168.4.31 is now listening on pool vendor
+2026-05-31 13:41:38:INFO:connection open
+2026-05-31 13:41:38:INFO:192.168.4.31:56320 - "GET /api/v1/vendor?limit=20&offset=0&sort=id:asc HTTP/1.1" 200
+2026-05-31 13:41:38:INFO:192.168.4.31:60444 - "WebSocket /api/v1/vendor/1" [accepted]
+2026-05-31 13:41:38:INFO:Client 192.168.4.31 is now listening on pool vendor,1
+2026-05-31 13:41:38:INFO:connection open
+2026-05-31 13:41:38:INFO:192.168.4.31:63018 - "WebSocket /api/v1/vendor/2" [accepted]
+2026-05-31 13:41:38:INFO:Client 192.168.4.31 is now listening on pool vendor,2
+2026-05-31 13:41:38:INFO:connection open
+2026-05-31 13:41:38:INFO:connection closed
+2026-05-31 13:41:38:INFO:connection closed
+2026-05-31 13:41:38:INFO:192.168.4.31:61340 - "WebSocket /api/v1/vendor/1" [accepted]
+2026-05-31 13:41:38:INFO:Client 192.168.4.31 is now listening on pool vendor,1
+2026-05-31 13:41:38:INFO:connection open
+2026-05-31 13:41:38:INFO:192.168.4.31:63920 - "WebSocket /api/v1/vendor/2" [accepted]
+2026-05-31 13:41:38:INFO:Client 192.168.4.31 is now listening on pool vendor,2
+2026-05-31 13:41:38:INFO:connection open
+2026-05-31 13:41:38:INFO:192.168.4.31:51521 - "WebSocket /api/v1/vendor/3" [accepted]
+2026-05-31 13:41:38:INFO:Client 192.168.4.31 is now listening on pool vendor,3
+2026-05-31 13:41:38:INFO:connection open
+2026-05-31 13:41:38:INFO:Client 192.168.4.31 has stopped listening on pool vendor,1
+2026-05-31 13:41:38:INFO:Client 192.168.4.31 has stopped listening on pool vendor,2
+2026-05-31 14:24:06:INFO:Syncing external DB.
+2026-05-31 14:24:11:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf531c988>, (), {}, 0, True, datetime.datetime(2026, 5, 30, 23, 46, 17, 216423), None, False, None, None)`!
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
+    await coroutine
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
+    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
+    response = await client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 212, in handle_async_request
+    regular_response = await self._transport.handle_async_request(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+2026-05-31 14:24:11:INFO:Syncing external DB.
+2026-05-31 14:24:16:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf531c988>, (), {}, 0, True, datetime.datetime(2026, 5, 30, 23, 46, 17, 216423), None, False, None, None)`!
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
+    await coroutine
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
+    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
+    response = await client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 212, in handle_async_request
+    regular_response = await self._transport.handle_async_request(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+2026-05-31 14:24:16:INFO:Syncing external DB.
+2026-05-31 14:24:21:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf531c988>, (), {}, 0, True, datetime.datetime(2026, 5, 30, 23, 46, 17, 216423), None, False, None, None)`!
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
+    await coroutine
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
+    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
+    response = await client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 212, in handle_async_request
+    regular_response = await self._transport.handle_async_request(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+2026-05-31 14:24:21:INFO:Syncing external DB.
+2026-05-31 14:24:26:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf531c988>, (), {}, 0, True, datetime.datetime(2026, 5, 30, 23, 46, 17, 216423), None, False, None, None)`!
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
+    await coroutine
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
+    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
+    response = await client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 212, in handle_async_request
+    regular_response = await self._transport.handle_async_request(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+2026-05-31 14:24:26:INFO:Syncing external DB.
+2026-05-31 14:24:26:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:26:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:26:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 14:24:26:INFO:Syncing external DB.
+2026-05-31 14:24:26:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:26:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:26:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 14:24:26:INFO:Syncing external DB.
+2026-05-31 14:24:26:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:27:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:27:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 14:24:27:INFO:Syncing external DB.
+2026-05-31 14:24:27:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:27:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:27:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 14:24:27:INFO:Syncing external DB.
+2026-05-31 14:24:27:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:27:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:27:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 14:24:27:INFO:Syncing external DB.
+2026-05-31 14:24:27:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:27:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:27:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 14:24:27:INFO:Syncing external DB.
+2026-05-31 14:24:27:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:27:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:27:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 14:24:27:INFO:Syncing external DB.
+2026-05-31 14:24:27:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:28:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:28:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 14:24:28:INFO:Syncing external DB.
+2026-05-31 14:24:28:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:28:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:28:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 14:24:28:INFO:Syncing external DB.
+2026-05-31 14:24:28:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:28:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 14:24:28:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 14:46:17:INFO:Syncing external DB.
+2026-05-31 14:46:17:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 14:46:17:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 14:46:17:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 15:46:17:INFO:Syncing external DB.
+2026-05-31 15:46:17:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 15:46:17:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 15:46:17:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 16:46:17:INFO:Syncing external DB.
+2026-05-31 16:46:17:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 16:46:17:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 16:46:17:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 16:49:51:INFO:192.168.4.45:52936 - "GET /api/v1/info HTTP/1.1" 200
+2026-05-31 16:49:51:INFO:192.168.4.45:52952 - "GET /api/v1/health HTTP/1.1" 200
+2026-05-31 16:49:51:INFO:192.168.4.45:52956 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-05-31 16:49:51:INFO:192.168.4.45:52968 - "GET /api/v1/spool HTTP/1.1" 200
+2026-05-31 17:46:17:INFO:Syncing external DB.
+2026-05-31 17:46:17:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 17:46:17:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 17:46:17:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 17:57:18:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
+2026-05-31 17:57:18:INFO:Using data directory: /home/andre/.local/share/spoolman
+2026-05-31 17:57:18:INFO:Using logs directory: /home/andre/.local/share/spoolman
+2026-05-31 17:57:18:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
+2026-05-31 17:57:18:INFO:Setting up database...
+2026-05-31 17:57:18:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
+2026-05-31 17:57:18:INFO:Performing migrations...
+2026-05-31 17:57:19:INFO:Scheduling automatic database backup for midnight.
+2026-05-31 17:57:19:INFO:Scheduling external DB sync.
+2026-05-31 17:57:19:INFO:Startup complete.
+2026-05-31 17:57:19:INFO:Application startup complete.
+2026-05-31 17:57:19:INFO:Syncing external DB.
+2026-05-31 17:57:19:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
+2026-05-31 17:57:19:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-05-31 17:57:19:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-05-31 17:57:19:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-05-31 17:57:30:INFO:192.168.4.45:58674 - "WebSocket /api/v1/spool" [accepted]
+2026-05-31 17:57:30:INFO:Client 192.168.4.45 is now listening on pool spool
+2026-05-31 17:57:30:INFO:connection open

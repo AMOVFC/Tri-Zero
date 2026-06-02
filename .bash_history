@@ -810,3 +810,8 @@ sed -n '1918,1922p' ~/klipper/klippy/extras/AFC.py
 sed -n '2156,2160p' ~/klipper/klippy/extras/AFC.py
 grep -n "afc_stats" ~/klipper/klippy/extras/AFC.py
 sudo reboot
+andre@Pi5VoronV0:~ $
+cd ~
+git clone https://github.com/ArmoredTurtle/AFC-Klipper-Screen-Add-On.git
+cd AFC-Klipper-Screen-Add-On
+./install.sh

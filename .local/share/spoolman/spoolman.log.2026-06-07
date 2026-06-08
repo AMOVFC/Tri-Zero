@@ -1,109 +1,36 @@
-2026-06-01 12:30:41:INFO:192.168.4.45:55644 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-01 12:30:41:INFO:192.168.4.45:55648 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-01 12:30:42:INFO:192.168.4.45:55658 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-01 12:30:42:INFO:192.168.4.45:55672 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-01 12:33:43:INFO:Client 192.168.4.45 has stopped listening on pool spool
-2026-06-01 12:33:43:INFO:connection closed
-2026-06-01 12:33:44:INFO:192.168.4.45:54496 - "WebSocket /api/v1/spool" [accepted]
-2026-06-01 12:33:44:INFO:Client 192.168.4.45 is now listening on pool spool
-2026-06-01 12:33:44:INFO:connection open
-2026-06-01 12:33:44:INFO:192.168.4.45:54506 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-01 12:33:44:INFO:192.168.4.45:54522 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-01 12:33:44:INFO:192.168.4.45:54548 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-01 12:33:44:INFO:192.168.4.45:54538 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-01 12:34:03:INFO:192.168.4.45:55158 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-01 12:34:03:INFO:192.168.4.45:55168 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-01 12:34:03:INFO:192.168.4.45:55174 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-01 12:34:03:INFO:192.168.4.45:55190 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-01 12:34:16:INFO:Shutting down
-2026-06-01 12:34:16:INFO:Client 192.168.4.45 has stopped listening on pool spool
-2026-06-01 12:34:16:INFO:connection closed
-2026-06-01 12:34:16:INFO:Waiting for application shutdown.
-2026-06-01 12:34:16:INFO:Application shutdown complete.
-2026-06-01 12:34:16:INFO:Finished server process [658]
-2026-06-01 12:34:37:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
-2026-06-01 12:34:37:INFO:Using data directory: /home/andre/.local/share/spoolman
-2026-06-01 12:34:37:INFO:Using logs directory: /home/andre/.local/share/spoolman
-2026-06-01 12:34:37:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
-2026-06-01 12:34:37:INFO:Setting up database...
-2026-06-01 12:34:37:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
-2026-06-01 12:34:37:INFO:Performing migrations...
-2026-06-01 12:34:37:INFO:Scheduling automatic database backup for midnight.
-2026-06-01 12:34:37:INFO:Scheduling external DB sync.
-2026-06-01 12:34:37:INFO:Startup complete.
-2026-06-01 12:34:37:INFO:Application startup complete.
-2026-06-01 12:34:37:INFO:Syncing external DB.
-2026-06-01 12:34:37:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
-2026-06-01 12:34:37:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-01 12:34:38:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-01 12:34:38:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-01 12:34:49:INFO:192.168.4.45:37378 - "WebSocket /api/v1/spool" [accepted]
-2026-06-01 12:34:49:INFO:Client 192.168.4.45 is now listening on pool spool
-2026-06-01 12:34:49:INFO:connection open
-2026-06-01 12:34:51:INFO:192.168.4.45:37390 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-01 12:34:51:INFO:192.168.4.45:37398 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-01 12:34:51:INFO:192.168.4.45:37404 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-01 12:34:51:INFO:192.168.4.45:37416 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-01 13:21:38:INFO:Shutting down
-2026-06-01 13:21:38:INFO:Client 192.168.4.45 has stopped listening on pool spool
-2026-06-01 13:21:38:INFO:connection closed
-2026-06-01 13:21:39:INFO:Waiting for application shutdown.
-2026-06-01 13:21:39:INFO:Application shutdown complete.
-2026-06-01 13:21:39:INFO:Finished server process [652]
-2026-06-01 13:21:59:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
-2026-06-01 13:21:59:INFO:Using data directory: /home/andre/.local/share/spoolman
-2026-06-01 13:21:59:INFO:Using logs directory: /home/andre/.local/share/spoolman
-2026-06-01 13:21:59:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
-2026-06-01 13:21:59:INFO:Setting up database...
-2026-06-01 13:21:59:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
-2026-06-01 13:21:59:INFO:Performing migrations...
-2026-06-01 13:22:00:INFO:Scheduling automatic database backup for midnight.
-2026-06-01 13:22:00:INFO:Scheduling external DB sync.
-2026-06-01 13:22:00:INFO:Startup complete.
-2026-06-01 13:22:00:INFO:Application startup complete.
-2026-06-01 13:22:00:INFO:Syncing external DB.
-2026-06-01 13:22:00:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
-2026-06-01 13:22:00:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-01 13:22:00:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-01 13:22:00:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-01 13:22:12:INFO:192.168.4.45:40758 - "WebSocket /api/v1/spool" [accepted]
-2026-06-01 13:22:12:INFO:Client 192.168.4.45 is now listening on pool spool
-2026-06-01 13:22:12:INFO:connection open
-2026-06-01 13:42:47:INFO:192.168.4.45:50184 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-01 13:42:47:INFO:192.168.4.45:50200 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-01 13:42:47:INFO:192.168.4.45:50214 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-01 13:42:47:INFO:192.168.4.45:50228 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-01 13:45:19:INFO:Shutting down
-2026-06-01 13:45:19:INFO:Client 192.168.4.45 has stopped listening on pool spool
-2026-06-01 13:45:19:INFO:connection closed
-2026-06-01 13:45:19:INFO:Waiting for application shutdown.
-2026-06-01 13:45:19:INFO:Application shutdown complete.
-2026-06-01 13:45:19:INFO:Finished server process [648]
-2026-06-01 13:45:40:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
-2026-06-01 13:45:40:INFO:Using data directory: /home/andre/.local/share/spoolman
-2026-06-01 13:45:40:INFO:Using logs directory: /home/andre/.local/share/spoolman
-2026-06-01 13:45:40:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
-2026-06-01 13:45:40:INFO:Setting up database...
-2026-06-01 13:45:40:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
-2026-06-01 13:45:40:INFO:Performing migrations...
-2026-06-01 13:45:40:INFO:Scheduling automatic database backup for midnight.
-2026-06-01 13:45:40:INFO:Scheduling external DB sync.
-2026-06-01 13:45:40:INFO:Startup complete.
-2026-06-01 13:45:40:INFO:Application startup complete.
-2026-06-01 13:45:40:INFO:Syncing external DB.
-2026-06-01 13:45:40:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
-2026-06-01 13:45:40:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-01 13:45:41:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-01 13:45:41:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-01 13:45:53:INFO:192.168.4.45:58260 - "WebSocket /api/v1/spool" [accepted]
-2026-06-01 13:45:53:INFO:Client 192.168.4.45 is now listening on pool spool
-2026-06-01 13:45:53:INFO:connection open
-2026-06-01 13:45:54:INFO:192.168.4.45:58268 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-01 13:45:54:INFO:192.168.4.45:58282 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-01 13:45:54:INFO:192.168.4.45:58314 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-01 13:45:54:INFO:192.168.4.45:58298 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-01 14:45:40:INFO:Syncing external DB.
-2026-06-01 14:45:45:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4f6c988>, (), {}, 0, True, datetime.datetime(2026, 6, 1, 13, 45, 40, 949183), None, False, None, None)`!
+2026-06-07 14:23:38:INFO:192.168.4.45:48362 - "GET /api/v1/info HTTP/1.1" 200
+2026-06-07 14:23:38:INFO:192.168.4.45:48368 - "GET /api/v1/health HTTP/1.1" 200
+2026-06-07 14:23:38:INFO:192.168.4.45:48376 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-06-07 14:23:38:INFO:192.168.4.45:48384 - "GET /api/v1/spool HTTP/1.1" 200
+2026-06-07 14:24:50:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
+2026-06-07 14:24:50:INFO:Using data directory: /home/andre/.local/share/spoolman
+2026-06-07 14:24:50:INFO:Using logs directory: /home/andre/.local/share/spoolman
+2026-06-07 14:24:50:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
+2026-06-07 14:24:50:INFO:Setting up database...
+2026-06-07 14:24:50:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
+2026-06-07 14:24:50:INFO:Performing migrations...
+2026-06-07 14:24:50:INFO:Scheduling automatic database backup for midnight.
+2026-06-07 14:24:50:INFO:Scheduling external DB sync.
+2026-06-07 14:24:50:INFO:Startup complete.
+2026-06-07 14:24:50:INFO:Application startup complete.
+2026-06-07 14:24:50:INFO:Syncing external DB.
+2026-06-07 14:24:50:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
+2026-06-07 14:24:50:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-07 14:24:51:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-07 14:24:51:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-07 14:25:02:INFO:192.168.4.45:58032 - "WebSocket /api/v1/spool" [accepted]
+2026-06-07 14:25:02:INFO:Client 192.168.4.45 is now listening on pool spool
+2026-06-07 14:25:02:INFO:connection open
+2026-06-07 14:46:49:INFO:192.168.4.45:59756 - "GET /api/v1/info HTTP/1.1" 200
+2026-06-07 14:46:49:INFO:192.168.4.45:59768 - "GET /api/v1/health HTTP/1.1" 200
+2026-06-07 14:46:49:INFO:192.168.4.45:59774 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-06-07 14:46:49:INFO:192.168.4.45:59790 - "GET /api/v1/spool HTTP/1.1" 200
+2026-06-07 14:52:19:INFO:192.168.4.45:44678 - "GET /api/v1/info HTTP/1.1" 200
+2026-06-07 14:52:19:INFO:192.168.4.45:44682 - "GET /api/v1/health HTTP/1.1" 200
+2026-06-07 14:52:19:INFO:192.168.4.45:44702 - "GET /api/v1/spool HTTP/1.1" 200
+2026-06-07 14:52:19:INFO:192.168.4.45:44692 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-06-07 15:45:57:INFO:Syncing external DB.
+2026-06-07 15:46:02:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4eab988>, (), {}, 0, True, datetime.datetime(2026, 6, 7, 14, 24, 50, 829727), None, False, None, None)`!
 Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
     yield
@@ -193,8 +120,8 @@ Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
     raise mapped_exc(message) from exc
 httpx.ConnectTimeout
-2026-06-01 15:45:40:INFO:Syncing external DB.
-2026-06-01 15:45:45:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4f6c988>, (), {}, 0, True, datetime.datetime(2026, 6, 1, 13, 45, 40, 949183), None, False, None, None)`!
+2026-06-07 16:24:50:INFO:Syncing external DB.
+2026-06-07 16:24:55:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4eab988>, (), {}, 0, True, datetime.datetime(2026, 6, 7, 14, 24, 50, 829727), None, False, None, None)`!
 Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
     yield
@@ -284,16 +211,8 @@ Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
     raise mapped_exc(message) from exc
 httpx.ConnectTimeout
-2026-06-01 16:02:35:INFO:192.168.4.45:60814 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-01 16:02:35:INFO:192.168.4.45:60820 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-01 16:02:35:INFO:192.168.4.45:60836 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-01 16:02:35:INFO:192.168.4.45:60840 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-01 16:03:03:INFO:192.168.4.45:57430 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-01 16:03:03:INFO:192.168.4.45:57440 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-01 16:03:03:INFO:192.168.4.45:57454 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-01 16:03:03:INFO:192.168.4.45:57444 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-01 16:45:40:INFO:Syncing external DB.
-2026-06-01 16:45:45:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4f6c988>, (), {}, 0, True, datetime.datetime(2026, 6, 1, 13, 45, 40, 949183), None, False, None, None)`!
+2026-06-07 17:24:50:INFO:Syncing external DB.
+2026-06-07 17:24:55:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4eab988>, (), {}, 0, True, datetime.datetime(2026, 6, 7, 14, 24, 50, 829727), None, False, None, None)`!
 Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
     yield
@@ -383,8 +302,8 @@ Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
     raise mapped_exc(message) from exc
 httpx.ConnectTimeout
-2026-06-01 17:45:40:INFO:Syncing external DB.
-2026-06-01 17:45:45:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4f6c988>, (), {}, 0, True, datetime.datetime(2026, 6, 1, 13, 45, 40, 949183), None, False, None, None)`!
+2026-06-07 18:24:50:INFO:Syncing external DB.
+2026-06-07 18:24:55:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4eab988>, (), {}, 0, True, datetime.datetime(2026, 6, 7, 14, 24, 50, 829727), None, False, None, None)`!
 Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
     yield
@@ -474,42 +393,46 @@ Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
     raise mapped_exc(message) from exc
 httpx.ConnectTimeout
-2026-06-01 18:45:40:INFO:Syncing external DB.
-2026-06-01 18:45:41:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-01 18:45:41:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-01 18:45:41:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-01 19:45:40:INFO:Syncing external DB.
-2026-06-01 19:45:41:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-01 19:45:41:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-01 19:45:41:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-01 20:45:40:INFO:Syncing external DB.
-2026-06-01 20:45:41:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-01 20:45:41:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-01 20:45:41:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-01 21:45:40:INFO:Syncing external DB.
-2026-06-01 21:45:41:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-01 21:45:41:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-01 21:45:41:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-01 22:45:40:INFO:Syncing external DB.
-2026-06-01 22:45:41:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-01 22:45:41:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-01 22:45:41:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-01 22:57:03:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
-2026-06-01 22:57:03:INFO:Using data directory: /home/andre/.local/share/spoolman
-2026-06-01 22:57:03:INFO:Using logs directory: /home/andre/.local/share/spoolman
-2026-06-01 22:57:03:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
-2026-06-01 22:57:03:INFO:Setting up database...
-2026-06-01 22:57:03:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
-2026-06-01 22:57:03:INFO:Performing migrations...
-2026-06-01 22:57:04:INFO:Scheduling automatic database backup for midnight.
-2026-06-01 22:57:04:INFO:Scheduling external DB sync.
-2026-06-01 22:57:04:INFO:Startup complete.
-2026-06-01 22:57:04:INFO:Application startup complete.
-2026-06-01 22:57:04:INFO:Syncing external DB.
-2026-06-01 22:57:04:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
-2026-06-01 22:57:04:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-01 22:57:04:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-01 22:57:04:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-01 22:57:16:INFO:192.168.4.45:56028 - "WebSocket /api/v1/spool" [accepted]
-2026-06-01 22:57:16:INFO:Client 192.168.4.45 is now listening on pool spool
-2026-06-01 22:57:16:INFO:connection open
+2026-06-07 19:24:50:INFO:Syncing external DB.
+2026-06-07 19:24:50:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-07 19:24:51:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-07 19:24:51:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-07 20:24:50:INFO:Syncing external DB.
+2026-06-07 20:24:50:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-07 20:24:51:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-07 20:24:51:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-07 20:31:13:INFO:192.168.4.45:49924 - "GET /api/v1/info HTTP/1.1" 200
+2026-06-07 20:31:13:INFO:192.168.4.45:49928 - "GET /api/v1/health HTTP/1.1" 200
+2026-06-07 20:31:14:INFO:192.168.4.45:49932 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-06-07 20:31:14:INFO:192.168.4.45:49942 - "GET /api/v1/spool HTTP/1.1" 200
+2026-06-07 20:40:01:INFO:192.168.4.45:46170 - "GET /api/v1/info HTTP/1.1" 200
+2026-06-07 20:40:01:INFO:192.168.4.45:46180 - "GET /api/v1/health HTTP/1.1" 200
+2026-06-07 20:40:01:INFO:192.168.4.45:46184 - "GET /api/v1/spool HTTP/1.1" 200
+2026-06-07 20:40:01:INFO:192.168.4.45:46182 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-06-07 21:24:50:INFO:Syncing external DB.
+2026-06-07 21:24:50:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-07 21:24:51:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-07 21:24:51:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-07 22:24:50:INFO:Syncing external DB.
+2026-06-07 22:24:50:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-07 22:24:51:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-07 22:24:51:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-07 23:09:42:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
+2026-06-07 23:09:42:INFO:Using data directory: /home/andre/.local/share/spoolman
+2026-06-07 23:09:42:INFO:Using logs directory: /home/andre/.local/share/spoolman
+2026-06-07 23:09:42:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
+2026-06-07 23:09:42:INFO:Setting up database...
+2026-06-07 23:09:42:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
+2026-06-07 23:09:42:INFO:Performing migrations...
+2026-06-07 23:09:43:INFO:Scheduling automatic database backup for midnight.
+2026-06-07 23:09:43:INFO:Scheduling external DB sync.
+2026-06-07 23:09:43:INFO:Startup complete.
+2026-06-07 23:09:43:INFO:Application startup complete.
+2026-06-07 23:09:43:INFO:Syncing external DB.
+2026-06-07 23:09:43:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
+2026-06-07 23:09:43:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-07 23:09:43:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-07 23:09:43:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-07 23:09:55:INFO:192.168.4.45:33062 - "WebSocket /api/v1/spool" [accepted]
+2026-06-07 23:09:55:INFO:Client 192.168.4.45 is now listening on pool spool
+2026-06-07 23:09:55:INFO:connection open

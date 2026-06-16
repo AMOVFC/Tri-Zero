@@ -1,13 +1,5 @@
-2026-06-09 14:54:27:INFO:192.168.4.45:59078 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-09 14:54:27:INFO:192.168.4.45:59084 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-09 14:54:27:INFO:192.168.4.45:59090 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-09 14:54:27:INFO:192.168.4.45:59086 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-09 15:45:06:INFO:192.168.4.45:35182 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-09 15:45:06:INFO:192.168.4.45:35192 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-09 15:45:06:INFO:192.168.4.45:35202 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-09 15:45:06:INFO:192.168.4.45:35206 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-09 15:53:47:INFO:Syncing external DB.
-2026-06-09 15:53:52:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf53fc988>, (), {}, 0, True, datetime.datetime(2026, 6, 8, 18, 11, 4, 912877), None, False, None, None)`!
+2026-06-15 13:01:04:INFO:Syncing external DB.
+2026-06-15 13:01:09:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf53cc988>, (), {}, 0, True, datetime.datetime(2026, 6, 14, 21, 36, 22, 510443), None, False, None, None)`!
 Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
     yield
@@ -97,8 +89,8 @@ Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
     raise mapped_exc(message) from exc
 httpx.ConnectTimeout
-2026-06-09 15:53:52:INFO:Syncing external DB.
-2026-06-09 15:53:57:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf53fc988>, (), {}, 0, True, datetime.datetime(2026, 6, 8, 18, 11, 4, 912877), None, False, None, None)`!
+2026-06-15 13:01:09:INFO:Syncing external DB.
+2026-06-15 13:01:14:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf53cc988>, (), {}, 0, True, datetime.datetime(2026, 6, 14, 21, 36, 22, 510443), None, False, None, None)`!
 Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
     yield
@@ -188,472 +180,9 @@ Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
     raise mapped_exc(message) from exc
 httpx.ConnectTimeout
-2026-06-09 15:53:57:INFO:Syncing external DB.
-2026-06-09 15:54:02:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf53fc988>, (), {}, 0, True, datetime.datetime(2026, 6, 8, 18, 11, 4, 912877), None, False, None, None)`!
-Traceback (most recent call last):
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
-    yield
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
-    resp = await self._pool.handle_async_request(req)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
-    raise exc from None
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
-    response = await connection.handle_async_request(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        pool_request.request
-        ^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
-    raise exc
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
-    stream = await self._connect(request)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
-    stream = await self._network_backend.connect_tcp(**kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
-    return await self._backend.connect_tcp(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<5 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
-    with map_exceptions(exc_map):
-         ~~~~~~~~~~~~~~^^^^^^^^^
-  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
-    raise to_exc(exc) from exc
-httpcore.ConnectTimeout
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
-    await coroutine
-  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
-    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
-                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
-    response = await client.get(url)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
-    return await self.request(
-           ^^^^^^^^^^^^^^^^^^^
-    ...<9 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
-    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
-    response = await self._send_handling_auth(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
-    response = await self._send_handling_redirects(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
-    response = await self._send_single_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
-    response = await transport.handle_async_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 161, in handle_async_request
-    revalidation_response = await self._transport.handle_async_request(revalidation_request)
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
-    with map_httpcore_exceptions():
-         ~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ConnectTimeout
-2026-06-09 15:54:02:INFO:Syncing external DB.
-2026-06-09 15:54:07:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf53fc988>, (), {}, 0, True, datetime.datetime(2026, 6, 8, 18, 11, 4, 912877), None, False, None, None)`!
-Traceback (most recent call last):
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
-    yield
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
-    resp = await self._pool.handle_async_request(req)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
-    raise exc from None
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
-    response = await connection.handle_async_request(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        pool_request.request
-        ^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
-    raise exc
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
-    stream = await self._connect(request)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
-    stream = await self._network_backend.connect_tcp(**kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
-    return await self._backend.connect_tcp(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<5 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
-    with map_exceptions(exc_map):
-         ~~~~~~~~~~~~~~^^^^^^^^^
-  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
-    raise to_exc(exc) from exc
-httpcore.ConnectTimeout
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
-    await coroutine
-  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
-    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
-                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
-    response = await client.get(url)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
-    return await self.request(
-           ^^^^^^^^^^^^^^^^^^^
-    ...<9 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
-    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
-    response = await self._send_handling_auth(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
-    response = await self._send_handling_redirects(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
-    response = await self._send_single_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
-    response = await transport.handle_async_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 161, in handle_async_request
-    revalidation_response = await self._transport.handle_async_request(revalidation_request)
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
-    with map_httpcore_exceptions():
-         ~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ConnectTimeout
-2026-06-09 15:54:07:INFO:Syncing external DB.
-2026-06-09 15:54:07:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:07:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:07:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:07:INFO:Syncing external DB.
-2026-06-09 15:54:07:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:07:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:07:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:07:INFO:Syncing external DB.
-2026-06-09 15:54:07:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:07:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:07:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:07:INFO:Syncing external DB.
-2026-06-09 15:54:07:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:08:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:08:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:08:INFO:Syncing external DB.
-2026-06-09 15:54:08:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:08:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:08:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:08:INFO:Syncing external DB.
-2026-06-09 15:54:08:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:08:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:08:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:08:INFO:Syncing external DB.
-2026-06-09 15:54:08:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:08:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:08:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:08:INFO:Syncing external DB.
-2026-06-09 15:54:08:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:08:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:08:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:08:INFO:Syncing external DB.
-2026-06-09 15:54:08:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:09:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:09:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:09:INFO:Syncing external DB.
-2026-06-09 15:54:09:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:09:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:09:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:09:INFO:Syncing external DB.
-2026-06-09 15:54:09:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:09:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:09:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:09:INFO:Syncing external DB.
-2026-06-09 15:54:09:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:09:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:09:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:09:INFO:Syncing external DB.
-2026-06-09 15:54:09:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:09:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:09:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:09:INFO:Syncing external DB.
-2026-06-09 15:54:10:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:10:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:10:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:10:INFO:Syncing external DB.
-2026-06-09 15:54:10:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:10:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:10:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:10:INFO:Syncing external DB.
-2026-06-09 15:54:10:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:10:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:10:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 15:54:10:INFO:Syncing external DB.
-2026-06-09 15:54:10:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:10:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 15:54:10:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 16:11:04:INFO:Syncing external DB.
-2026-06-09 16:11:04:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 16:11:05:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 16:11:05:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 16:46:32:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
-2026-06-09 16:46:32:INFO:Using data directory: /home/andre/.local/share/spoolman
-2026-06-09 16:46:32:INFO:Using logs directory: /home/andre/.local/share/spoolman
-2026-06-09 16:46:32:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
-2026-06-09 16:46:32:INFO:Setting up database...
-2026-06-09 16:46:32:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
-2026-06-09 16:46:32:INFO:Performing migrations...
-2026-06-09 16:46:33:INFO:Scheduling automatic database backup for midnight.
-2026-06-09 16:46:33:INFO:Scheduling external DB sync.
-2026-06-09 16:46:33:INFO:Startup complete.
-2026-06-09 16:46:33:INFO:Application startup complete.
-2026-06-09 16:46:33:INFO:Syncing external DB.
-2026-06-09 16:46:33:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
-2026-06-09 16:46:33:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 16:46:33:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 16:46:33:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 16:46:45:INFO:192.168.4.45:43740 - "WebSocket /api/v1/spool" [accepted]
-2026-06-09 16:46:45:INFO:Client 192.168.4.45 is now listening on pool spool
-2026-06-09 16:46:45:INFO:connection open
-2026-06-09 18:54:49:INFO:192.168.4.45:36652 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-09 18:54:49:INFO:192.168.4.45:36660 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-09 18:54:49:INFO:192.168.4.45:36666 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-09 18:54:49:INFO:192.168.4.45:36668 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-09 19:28:58:INFO:192.168.4.45:51326 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-09 19:28:58:INFO:192.168.4.45:51330 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-09 19:28:58:INFO:192.168.4.45:51354 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-09 19:28:58:INFO:192.168.4.45:51344 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-09 19:47:02:INFO:Syncing external DB.
-2026-06-09 19:47:07:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf538c988>, (), {}, 0, True, datetime.datetime(2026, 6, 9, 16, 46, 33, 372069), None, False, None, None)`!
-Traceback (most recent call last):
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
-    yield
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
-    resp = await self._pool.handle_async_request(req)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
-    raise exc from None
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
-    response = await connection.handle_async_request(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        pool_request.request
-        ^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
-    raise exc
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
-    stream = await self._connect(request)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
-    stream = await self._network_backend.connect_tcp(**kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
-    return await self._backend.connect_tcp(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<5 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
-    with map_exceptions(exc_map):
-         ~~~~~~~~~~~~~~^^^^^^^^^
-  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
-    raise to_exc(exc) from exc
-httpcore.ConnectTimeout
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
-    await coroutine
-  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
-    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
-                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
-    response = await client.get(url)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
-    return await self.request(
-           ^^^^^^^^^^^^^^^^^^^
-    ...<9 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
-    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
-    response = await self._send_handling_auth(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
-    response = await self._send_handling_redirects(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
-    response = await self._send_single_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
-    response = await transport.handle_async_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 161, in handle_async_request
-    revalidation_response = await self._transport.handle_async_request(revalidation_request)
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
-    with map_httpcore_exceptions():
-         ~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ConnectTimeout
-2026-06-09 19:47:07:INFO:Syncing external DB.
-2026-06-09 19:47:12:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf538c988>, (), {}, 0, True, datetime.datetime(2026, 6, 9, 16, 46, 33, 372069), None, False, None, None)`!
-Traceback (most recent call last):
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
-    yield
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
-    resp = await self._pool.handle_async_request(req)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
-    raise exc from None
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
-    response = await connection.handle_async_request(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        pool_request.request
-        ^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
-    raise exc
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
-    stream = await self._connect(request)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
-    stream = await self._network_backend.connect_tcp(**kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
-    return await self._backend.connect_tcp(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<5 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
-    with map_exceptions(exc_map):
-         ~~~~~~~~~~~~~~^^^^^^^^^
-  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
-    raise to_exc(exc) from exc
-httpcore.ConnectTimeout
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
-    await coroutine
-  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
-    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
-                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
-    response = await client.get(url)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
-    return await self.request(
-           ^^^^^^^^^^^^^^^^^^^
-    ...<9 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
-    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
-    response = await self._send_handling_auth(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
-    response = await self._send_handling_redirects(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
-    response = await self._send_single_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
-    response = await transport.handle_async_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 161, in handle_async_request
-    revalidation_response = await self._transport.handle_async_request(revalidation_request)
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
-    with map_httpcore_exceptions():
-         ~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ConnectTimeout
-2026-06-09 19:47:12:INFO:Syncing external DB.
-2026-06-09 19:47:12:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 19:47:17:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf538c988>, (), {}, 0, True, datetime.datetime(2026, 6, 9, 16, 46, 33, 372069), None, False, None, None)`!
+2026-06-15 13:01:14:INFO:Syncing external DB.
+2026-06-15 13:01:14:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:19:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf53cc988>, (), {}, 0, True, datetime.datetime(2026, 6, 14, 21, 36, 22, 510443), None, False, None, None)`!
 Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
     yield
@@ -743,16 +272,219 @@ Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
     raise mapped_exc(message) from exc
 httpx.ConnectTimeout
-2026-06-09 20:09:22:INFO:192.168.4.45:39992 - "GET /api/v1/info HTTP/1.1" 200
-2026-06-09 20:09:22:INFO:192.168.4.45:39994 - "GET /api/v1/health HTTP/1.1" 200
-2026-06-09 20:09:22:INFO:192.168.4.45:40006 - "GET /api/v1/vendor HTTP/1.1" 200
-2026-06-09 20:09:22:INFO:192.168.4.45:40010 - "GET /api/v1/spool HTTP/1.1" 200
-2026-06-09 20:46:33:INFO:Syncing external DB.
-2026-06-09 20:46:33:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 20:46:33:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 20:46:33:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 21:46:33:INFO:Syncing external DB.
-2026-06-09 21:46:38:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf538c988>, (), {}, 0, True, datetime.datetime(2026, 6, 9, 16, 46, 33, 372069), None, False, None, None)`!
+2026-06-15 13:01:19:INFO:Syncing external DB.
+2026-06-15 13:01:19:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:19:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:19:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:01:19:INFO:Syncing external DB.
+2026-06-15 13:01:19:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:19:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:19:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:01:19:INFO:Syncing external DB.
+2026-06-15 13:01:19:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:19:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:20:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:01:20:INFO:Syncing external DB.
+2026-06-15 13:01:20:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:20:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:20:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:01:20:INFO:Syncing external DB.
+2026-06-15 13:01:20:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:20:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:20:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:01:20:INFO:Syncing external DB.
+2026-06-15 13:01:20:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:20:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:20:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:01:20:INFO:Syncing external DB.
+2026-06-15 13:01:20:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:20:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:20:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:01:20:INFO:Syncing external DB.
+2026-06-15 13:01:20:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:20:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:21:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:01:21:INFO:Syncing external DB.
+2026-06-15 13:01:21:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:21:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:21:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:01:21:INFO:Syncing external DB.
+2026-06-15 13:01:21:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:21:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:21:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:01:21:INFO:Syncing external DB.
+2026-06-15 13:01:21:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:21:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:21:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:01:21:INFO:Syncing external DB.
+2026-06-15 13:01:21:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:21:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 13:01:21:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 13:20:29:INFO:192.168.4.45:55748 - "GET /api/v1/info HTTP/1.1" 200
+2026-06-15 13:20:29:INFO:192.168.4.45:55752 - "GET /api/v1/health HTTP/1.1" 200
+2026-06-15 13:20:29:INFO:192.168.4.45:55760 - "GET /api/v1/spool HTTP/1.1" 200
+2026-06-15 13:20:29:INFO:192.168.4.45:55756 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-06-15 13:36:22:INFO:Syncing external DB.
+2026-06-15 13:36:22:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 13:36:27:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf53cc988>, (), {}, 0, True, datetime.datetime(2026, 6, 14, 21, 36, 22, 510443), None, False, None, None)`!
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
+    await coroutine
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 174, in _sync
+    materials = _parse_materials_from_bytes(await _download_file(urljoin(url, "materials.json")))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
+    response = await client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 161, in handle_async_request
+    revalidation_response = await self._transport.handle_async_request(revalidation_request)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+2026-06-15 13:47:53:INFO:192.168.4.45:56472 - "GET /api/v1/info HTTP/1.1" 200
+2026-06-15 13:47:53:INFO:192.168.4.45:56478 - "GET /api/v1/health HTTP/1.1" 200
+2026-06-15 13:47:53:INFO:192.168.4.45:56492 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-06-15 13:47:53:INFO:192.168.4.45:56504 - "GET /api/v1/spool HTTP/1.1" 200
+2026-06-15 13:49:27:INFO:192.168.4.45:56680 - "GET /api/v1/info HTTP/1.1" 200
+2026-06-15 13:49:27:INFO:192.168.4.45:56692 - "GET /api/v1/health HTTP/1.1" 200
+2026-06-15 13:49:27:INFO:192.168.4.45:56702 - "GET /api/v1/spool HTTP/1.1" 200
+2026-06-15 13:49:27:INFO:192.168.4.45:56696 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-06-15 14:24:41:INFO:Performing scheduled database backup.
+2026-06-15 14:24:41:INFO:Deleting oldest backup /home/andre/.local/share/spoolman/backups/spoolman.db.5
+2026-06-15 14:24:41:INFO:Backing up SQLite database to /home/andre/.local/share/spoolman/backups/spoolman.db
+2026-06-15 14:24:41:INFO:Copied 1 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 2 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 3 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 4 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 5 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 6 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 7 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 8 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 9 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 10 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 11 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 12 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 13 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 14 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 15 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 16 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 17 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 18 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 19 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 20 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 21 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 22 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 23 of 24 pages.
+2026-06-15 14:24:41:INFO:Copied 24 of 24 pages.
+2026-06-15 14:24:41:INFO:Backup complete.
+2026-06-15 14:36:22:INFO:Syncing external DB.
+2026-06-15 14:36:22:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 14:36:22:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 14:36:22:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 15:36:22:INFO:Syncing external DB.
+2026-06-15 15:36:22:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 15:36:22:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 15:36:22:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 15:46:35:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
+2026-06-15 15:46:35:INFO:Using data directory: /home/andre/.local/share/spoolman
+2026-06-15 15:46:35:INFO:Using logs directory: /home/andre/.local/share/spoolman
+2026-06-15 15:46:35:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
+2026-06-15 15:46:35:INFO:Setting up database...
+2026-06-15 15:46:35:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
+2026-06-15 15:46:35:INFO:Performing migrations...
+2026-06-15 15:46:36:INFO:Scheduling automatic database backup for midnight.
+2026-06-15 15:46:36:INFO:Scheduling external DB sync.
+2026-06-15 15:46:36:INFO:Startup complete.
+2026-06-15 15:46:36:INFO:Application startup complete.
+2026-06-15 15:46:36:INFO:Syncing external DB.
+2026-06-15 15:46:36:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
+2026-06-15 15:46:36:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 15:46:36:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 15:46:37:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 15:48:00:INFO:192.168.4.45:58930 - "WebSocket /api/v1/spool" [accepted]
+2026-06-15 15:48:00:INFO:Client 192.168.4.45 is now listening on pool spool
+2026-06-15 15:48:00:INFO:connection open
+2026-06-15 15:48:54:INFO:192.168.4.45:40426 - "GET /api/v1/info HTTP/1.1" 200
+2026-06-15 15:48:54:INFO:192.168.4.45:40442 - "GET /api/v1/health HTTP/1.1" 200
+2026-06-15 15:48:54:INFO:192.168.4.45:40454 - "GET /api/v1/spool HTTP/1.1" 200
+2026-06-15 15:48:54:INFO:192.168.4.45:40448 - "GET /api/v1/vendor HTTP/1.1" 200
+2026-06-15 16:50:23:INFO:Syncing external DB.
+2026-06-15 16:50:28:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4f4b988>, (), {}, 0, True, datetime.datetime(2026, 6, 15, 15, 46, 36, 749996), None, False, None, None)`!
 Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
     yield
@@ -842,26 +574,295 @@ Traceback (most recent call last):
   File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
     raise mapped_exc(message) from exc
 httpx.ConnectTimeout
-2026-06-09 22:46:33:INFO:Syncing external DB.
-2026-06-09 22:46:33:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 22:46:33:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 22:46:33:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 23:25:22:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
-2026-06-09 23:25:22:INFO:Using data directory: /home/andre/.local/share/spoolman
-2026-06-09 23:25:22:INFO:Using logs directory: /home/andre/.local/share/spoolman
-2026-06-09 23:25:22:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
-2026-06-09 23:25:22:INFO:Setting up database...
-2026-06-09 23:25:22:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
-2026-06-09 23:25:22:INFO:Performing migrations...
-2026-06-09 23:25:23:INFO:Scheduling automatic database backup for midnight.
-2026-06-09 23:25:23:INFO:Scheduling external DB sync.
-2026-06-09 23:25:23:INFO:Startup complete.
-2026-06-09 23:25:23:INFO:Application startup complete.
-2026-06-09 23:25:23:INFO:Syncing external DB.
-2026-06-09 23:25:23:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
-2026-06-09 23:25:23:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
-2026-06-09 23:25:23:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
-2026-06-09 23:25:23:INFO:External DB synced. Filaments: 6957, Materials: 33
-2026-06-09 23:25:35:INFO:192.168.4.45:59998 - "WebSocket /api/v1/spool" [accepted]
-2026-06-09 23:25:35:INFO:Client 192.168.4.45 is now listening on pool spool
-2026-06-09 23:25:35:INFO:connection open
+2026-06-15 17:46:36:INFO:Syncing external DB.
+2026-06-15 17:46:41:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4f4b988>, (), {}, 0, True, datetime.datetime(2026, 6, 15, 15, 46, 36, 749996), None, False, None, None)`!
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
+    await coroutine
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
+    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
+    response = await client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 161, in handle_async_request
+    revalidation_response = await self._transport.handle_async_request(revalidation_request)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+2026-06-15 18:46:36:INFO:Syncing external DB.
+2026-06-15 18:46:41:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4f4b988>, (), {}, 0, True, datetime.datetime(2026, 6, 15, 15, 46, 36, 749996), None, False, None, None)`!
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
+    await coroutine
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
+    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
+    response = await client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 161, in handle_async_request
+    revalidation_response = await self._transport.handle_async_request(revalidation_request)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+2026-06-15 19:46:36:INFO:Syncing external DB.
+2026-06-15 19:46:41:ERROR:Unhandled exception in `scheduler.asyncio.job.Job(<JobType.CYCLIC: 1>, [datetime.timedelta(seconds=3600)], <function _sync at 0xf4f4b988>, (), {}, 0, True, datetime.datetime(2026, 6, 15, 15, 46, 36, 749996), None, False, None, None)`!
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/scheduler/asyncio/job.py", line 64, in _exec
+    await coroutine
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 173, in _sync
+    filaments = _parse_filaments_from_bytes(await _download_file(urljoin(url, "filaments.json")))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/spoolman/externaldb.py", line 138, in _download_file
+    response = await client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1768, in get
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/hishel/_async/_transports.py", line 161, in handle_async_request
+    revalidation_response = await self._transport.handle_async_request(revalidation_request)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/andre/Spoolman/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+2026-06-15 20:17:41:INFO:Starting Spoolman v0.23.1 (commit: eafbc64) (built: 2026-02-03 16:38:38+00:00)
+2026-06-15 20:17:41:INFO:Using data directory: /home/andre/.local/share/spoolman
+2026-06-15 20:17:41:INFO:Using logs directory: /home/andre/.local/share/spoolman
+2026-06-15 20:17:41:INFO:Using backups directory: /home/andre/.local/share/spoolman/backups
+2026-06-15 20:17:41:INFO:Setting up database...
+2026-06-15 20:17:41:INFO:No database type specified, using a default SQLite database located at "/home/andre/.local/share/spoolman/spoolman.db"
+2026-06-15 20:17:41:INFO:Performing migrations...
+2026-06-15 20:17:42:INFO:Scheduling automatic database backup for midnight.
+2026-06-15 20:17:42:INFO:Scheduling external DB sync.
+2026-06-15 20:17:42:INFO:Startup complete.
+2026-06-15 20:17:42:INFO:Application startup complete.
+2026-06-15 20:17:42:INFO:Syncing external DB.
+2026-06-15 20:17:42:INFO:Uvicorn running on http://0.0.0.0:7912 (Press CTRL+C to quit)
+2026-06-15 20:17:42:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/filaments.json "HTTP/1.1 200 OK"
+2026-06-15 20:17:42:INFO:HTTP Request: GET https://donkie.github.io/SpoolmanDB/materials.json "HTTP/1.1 200 OK"
+2026-06-15 20:17:42:INFO:External DB synced. Filaments: 6957, Materials: 33
+2026-06-15 20:17:54:INFO:192.168.4.45:53712 - "WebSocket /api/v1/spool" [accepted]
+2026-06-15 20:17:54:INFO:Client 192.168.4.45 is now listening on pool spool
+2026-06-15 20:17:54:INFO:connection open

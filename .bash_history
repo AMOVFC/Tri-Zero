@@ -815,3 +815,36 @@ cd ~
 git clone https://github.com/ArmoredTurtle/AFC-Klipper-Screen-Add-On.git
 cd AFC-Klipper-Screen-Add-On
 ./install.sh
+echo "===== RUNNING SERVICES ====="; systemctl list-units --type=service --state=running --no-pager; echo; echo "===== TIMERS (scheduled jobs) ====="; systemctl list-timers --all --no-pager; echo; echo "===== USER CRONTAB ====="; crontab -l 2>/dev/null; echo; echo "===== SYSTEM CRON DIRS ====="; ls -l /etc/cron.d /etc/cron.daily /etc/cron.hourly /etc/cron.weekly 2>/dev/null
+echo "===== TOP CPU PROCESSES ====="; ps -eo pid,ppid,comm,%cpu,%mem --sort=-%cpu | head -15
+systemctl --user list-timers --all --no-pager
+systemctl --user list-units --type=service --no-pager
+systemctl --user cat pi-home-backup-watch.service
+cat ~/Backup-Pie/.gitignore 2>/dev/null
+cat ~/.gitignore 2>/dev/null
+journalctl --user -u pi-home-backup-watch.service --since "1 hour ago" | tail -50
+journalctl --user -u pi-home-backup.service --since "1 hour ago" | tail -50
+journalctl --since "24 hours ago" | grep -iE "pi-home-backup|Backup-Pie" | tail -50
+inotifywait -m -r -e modify,create,delete,move --exclude "/\.git/" ~ 2>/dev/null | head -100
+systemctl --user edit pi-home-backup-watch.service --full
+systemctl --user daemon-reload
+systemctl --user restart pi-home-backup-watch.service
+journalctl --since "10 minutes ago" | grep pi-home-backup
+systemctl --user cat pi-home-backup-watch.service | sed -n '/ExecStart/,/^$/p'
+ps -ef | grep -v grep | grep inotifywait
+systemctl --user edit pi-home-backup-watch.service --full
+# make the change, save
+systemctl --user daemon-reload
+systemctl --user restart pi-home-backup-watch.service
+systemctl --user daemon-reload
+systemctl --user restart pi-home-backup-watch.service
+inotifywait -m -r -e modify,create,delete,move   --exclude "(/\.git/|/printer_data/logs/|/printer_data/database/|/printer_data/comms/|/\.cache/|/timelapse/)"   ~ 2>/dev/null | head -20
+ls
+cd printer_data
+ls
+cd config
+ls
+cd
+ls
+ls -a
+ls -l

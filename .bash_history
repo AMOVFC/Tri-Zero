@@ -848,3 +848,4 @@ cd
 ls
 ls -a
 ls -l
+sudo reboot

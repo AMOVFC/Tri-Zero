@@ -849,3 +849,43 @@ ls
 ls -a
 ls -l
 sudo reboot
+lsusb -t
+lsusb
+lsusb -t
+lsusb
+lsusb -t
+sudo systemctl restart klipper
+# Then start a long print with the filament change scenario
+# Watch for crashes
+watch -n 1 'ps aux | grep -E "klipper|crowsnest|camera" | grep -v grep; echo "---"; free -h; echo "---"; cat /proc/stat | head -1'
+# 1. Capture Klipper log from the crash
+tail -500 ~/printer_data/logs/klippy.log > ~/klippy_crash.log
+# 2. Get dmesg USB errors
+dmesg | grep -iE "usb|disconnect" | tail -50 > ~/dmesg_usb.log
+# 3. System info at time of crash
+free -h > ~/system_info.log
+echo "---" >> ~/system_info.log
+uptime >> ~/system_info.log
+echo "---" >> ~/system_info.log
+ps aux | grep -E "klipper|crowsnest|python" >> ~/system_info.log
+# 4. USB device tree
+lsusb -t > ~/lsusb_tree.log
+# 5. Check what's running
+systemctl status klipper > ~/service_status.log 2>&1
+echo "---" >> ~/service_status.log
+systemctl status crowsnest >> ~/service_status.log 2>&1
+# 6. List the files created
+ls -lh ~/*.log
+# Check if crowsnest is running RIGHT NOW:
+ps aux | grep crowsnest | grep -v grep
+cat ~/klippy_crash.log
+cat ~/dmesg_usb.log
+cat ~/system_info.log
+cat ~/lsusb_tree.log
+cat ~/service_status.log
+# Measure USB 5V rail voltage under load (requires multimeter or voltage monitor)
+# OR check thermal throttling:
+watch -n 1 'cat /sys/class/thermal/thermal_zone*/temp; echo "---"; cat /proc/cpuinfo | grep temp'
+# Check for USB errors in real-time:
+sudo dmesg -w | grep -iE "usb|power|voltage" &
+# Let it run during print, then Ctrl+C and paste output

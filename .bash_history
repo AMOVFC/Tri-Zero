@@ -889,3 +889,4 @@ watch -n 1 'cat /sys/class/thermal/thermal_zone*/temp; echo "---"; cat /proc/cpu
 # Check for USB errors in real-time:
 sudo dmesg -w | grep -iE "usb|power|voltage" &
 # Let it run during print, then Ctrl+C and paste output
+sudo dmesg -w | tee ~/test_dmesg_live.log | grep -iE "usb|disconnect|error|reset"
